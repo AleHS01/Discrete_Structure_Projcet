@@ -2,9 +2,6 @@ import java.util.Scanner;
 //import javax.swing.JOptionPane;
 
 public class Main {
-    public Main() {
-    }
-
     public static void main(String[] args) {
         boolean doneFlag = true;
         //JOptionPane.showMessageDialog(null, "Hello Beato");
