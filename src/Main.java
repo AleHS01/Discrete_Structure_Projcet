@@ -1,11 +1,15 @@
 import java.util.Scanner;
+import java.io.*;
 //import javax.swing.JOptionPane;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{
+
         boolean doneFlag = true;
-        //JOptionPane.showMessageDialog(null, "Hello Beato");
+        File file;
         Scanner scan = new Scanner(System.in);
+        //int wikiIndex = 0;
+        //JOptionPane.showMessageDialog(null, "Hello Beato");
 
         do {
             menu();
@@ -17,6 +21,7 @@ public class Main {
                     break;
                 case 'S':
                 case 's':
+                    //wikiIndex = 1;
                     setTheory(scan);
                     break;
                 case 'L':
@@ -106,6 +111,9 @@ public class Main {
 
     public static void setTheory(Scanner scanner) {
         System.out.println("Set Theory is printing");
+        //Wiki_Discrete wiki = new Wiki_Discrete();
+        File file;
+        Wiki_Discrete.working();
     }
 
     public static void logic(Scanner scanner) {
