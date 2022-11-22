@@ -8,7 +8,7 @@ public class Main {
         boolean doneFlag = true;
         File file;
         Scanner scan = new Scanner(System.in);
-        //int wikiIndex = 0;
+        int wikiIndex;
         //JOptionPane.showMessageDialog(null, "Hello Beato");
 
         do {
@@ -21,50 +21,61 @@ public class Main {
                     break;
                 case 'S':
                 case 's':
-                    //wikiIndex = 1;
-                    setTheory(scan);
+                    wikiIndex = 1;
+                    setTheory(scan, wikiIndex);
                     break;
                 case 'L':
                 case 'l':
-                    logic(scan);
+                    wikiIndex = 2;
+                    logic(scan, wikiIndex);
                     break;
                 case 'C':
                 case 'c':
-                    counting(scan);
+                    wikiIndex = 3;
+                    counting(scan, wikiIndex);
                     break;
                 case 'B':
                 case 'b':
-                    combination(scan);
+                    wikiIndex = 4;
+                    combination(scan, wikiIndex);
                     break;
                 case 'P':
                 case 'p':
-                    permutation(scan);
+                    wikiIndex = 5;
+                    permutation(scan, wikiIndex);
                     break;
                 case 'T':
                 case 't':
-                    pascalTriangle(scan);
+                    wikiIndex = 6;
+                    pascalTriangle(scan, wikiIndex);
                     break;
                 case 'I':
                 case 'i':
-                    induction(scan);
+                    wikiIndex = 7;
+                    induction(scan, wikiIndex);
                     break;
                 case 'R':
                 case 'r':
-                    recursion(scan);
+                    wikiIndex = 8;
+                    recursion(scan, wikiIndex);
                     break;
                 case 'F':
                 case 'f':
-                    fibonacciSequence(scan);
+                    wikiIndex = 9;
+                    fibonacciSequence(scan, wikiIndex);
                     break;
                 case 'N':
                 case 'n':
-                    numberTheory(scan);
+                    wikiIndex = 10;
+                    numberTheory(scan, wikiIndex);
                     break;
                 case 'M':
                 case 'm':
-                    numberSystem(scan);
+                    wikiIndex = 11;
+                    numberSystem(scan, wikiIndex);
                     break;
                 default:
+                    wikiIndex = 0;
                     System.out.printf("Error: %s is an invalid selection - Try Again Please\n", choice);
                     break;
             }
@@ -109,49 +120,58 @@ public class Main {
 
     }
 
-    public static void setTheory(Scanner scanner) {
+    public static void setTheory(Scanner scanner, int wikiIndex) throws IOException {
         System.out.println("Set Theory is printing");
-        //Wiki_Discrete wiki = new Wiki_Discrete();
-        File file;
-        Wiki_Discrete.working();
+        Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
     }
 
-    public static void logic(Scanner scanner) {
+    public static void logic(Scanner scanner, int wikiIndex) throws IOException{
         System.out.println("Logic is printing");
+        Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
     }
 
-    public static void counting(Scanner scanner) {
+    public static void counting(Scanner scanner, int wikiIndex) throws IOException{
         System.out.println("Counting is printing");
+        Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
     }
 
-    public static void combination(Scanner scanner) {
+    public static void combination(Scanner scanner, int wikiIndex) throws IOException{
         System.out.println("Combination is printing");
+        Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
     }
 
-    public static void permutation(Scanner scanner) {
+    public static void permutation(Scanner scanner, int wikiIndex) throws IOException{
         System.out.println("Permutation is printing");
+        Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
     }
 
-    public static void pascalTriangle(Scanner scanner) {
+    public static void pascalTriangle(Scanner scanner, int wikiIndex) throws IOException{
         System.out.println("Pascal Triangle printing");
+        Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
     }
 
-    public static void induction(Scanner scanner) {
+    public static void induction(Scanner scanner, int wikiIndex) throws IOException{
         System.out.println("Induction Printing");
+        Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
     }
 
-    public static void recursion(Scanner scanner) {
+    public static void recursion(Scanner scanner, int wikiIndex) throws IOException{
         System.out.println("Recursion printing");
+        Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
     }
 
-    public static void fibonacciSequence(Scanner scanner) {
+    public static void fibonacciSequence(Scanner scanner, int wikiIndex) throws IOException{
         System.out.println("Fibonacci printing");
+        Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
     }
-    public static void numberTheory(Scanner scanner) {
+    public static void numberTheory(Scanner scanner, int wikiIndex) throws IOException{
         System.out.println("Number Theory");
+        Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
     }
-    public static void numberSystem(Scanner scanner) {
+    public static void numberSystem(Scanner scanner, int wikiIndex) throws IOException{
         System.out.println("Number System");
+        Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
+
     }
 }
 
