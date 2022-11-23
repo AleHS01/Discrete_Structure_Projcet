@@ -1,17 +1,18 @@
 import java.io.*;
 import java.util.Scanner;
-
 public class Wiki_Discrete{
 
     private int wikiIndex;
     private File file;
     private Scanner scanner;
+    private String wikiString;
 
     //No-Arg Constructor
     public Wiki_Discrete(){
         wikiIndex = 0;
         file = new File("");
         scanner = new Scanner("");
+        wikiString = "";
     }
     //Constructor with Parameter
     /*public Wiki_Discrete( int wikiIndex, File file, Scanner scanner){
@@ -20,16 +21,16 @@ public class Wiki_Discrete{
         this.scanner = scanner;
     }*/
     public Wiki_Discrete( int wikiIndex)throws IOException{
+        wikiString = "";
         this.wikiIndex = wikiIndex;
-
         switch (wikiIndex){
             case 1:
                 this.file = new File("/Users/alehs/Desktop/Discrete Strucuture/Discrete_Structure_Project/src/WikiFolder/set_Theory_Wiki.txt");
-                setTheory(file);
+                setterSetTheory(file);
                 break;
             case 2:
                 this.file = new File("/Users/alehs/Desktop/Discrete Strucuture/Discrete_Structure_Project/src/WikiFolder/logic_Wiki.txt");
-                logic(file);
+                setLogic(file);
                 break;
             case 3:
                 this.file = new File("/Users/alehs/Desktop/Discrete Strucuture/Discrete_Structure_Project/src/WikiFolder/counting_Wiki.txt");
@@ -69,41 +70,59 @@ public class Wiki_Discrete{
                 break;
         }
     }
+    //Setters
     public static void working(){
         System.out.println("It's Working");
     }
-    public static void setTheory(File file) throws IOException{
-        Scanner scanner = new Scanner(file);
+    public void setterSetTheory(File file) throws IOException{
+
+        Scanner scan = new Scanner(file);
+        while(scan.hasNextLine()){
+            wikiString = wikiString.concat(scan.nextLine() + " ");
+            //infoArray.add(scanner.nextLine());
+        }
     }
-    public static void logic(File file)throws IOException{
+    public void setLogic(File file)throws IOException{
+        Scanner scan = new Scanner(file);
+        while(scan.hasNextLine()){
+            wikiString = wikiString.concat(scan.nextLine() + " ");
+            //infoArray.add(scanner.nextLine());
+        }
+    }
+    public void counting(File file)throws IOException{
 
     }
-    public static void counting(File file)throws IOException{
+    public void combination(File file)throws IOException{
 
     }
-    public static void combination(File file)throws IOException{
+    public void permutation(File file)throws IOException{
 
     }
-    public static void permutation(File file)throws IOException{
+    public void pascalTriangle(File file)throws IOException{
 
     }
-    public static void pascalTriangle(File file)throws IOException{
+    public void induction(File file)throws IOException{
 
     }
-    public static void induction(File file)throws IOException{
+    public void recursion(File file)throws IOException{
 
     }
-    public static void recursion(File file)throws IOException{
+    public void fibonacci(File file)throws IOException{
 
     }
-    public static void fibonacci(File file)throws IOException{
+    public void numberTheory(File file)throws IOException{
 
     }
-    public static void numberTheory(File file)throws IOException{
-
-    }
-    public static void numberSystem(File file)throws IOException{
+    public void numberSystem(File file)throws IOException{
 
     }
 
+    //Getters
+
+    public String getSetTheory(){
+        return wikiString;
+    }
+    public String getLogic(){
+        return wikiString;
+    }
 }
