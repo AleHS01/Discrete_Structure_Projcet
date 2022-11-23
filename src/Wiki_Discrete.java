@@ -19,57 +19,46 @@ public class Wiki_Discrete{
         switch (wikiIndex){
             case 1:
                 this.file = new File("/Users/alehs/Desktop/Discrete Strucuture/Discrete_Structure_Project/src/WikiFolder/set_Theory_Wiki.txt");
-                //setterSetTheory(file);
                 setWikiString( file);
                 break;
             case 2:
                 this.file = new File("/Users/alehs/Desktop/Discrete Strucuture/Discrete_Structure_Project/src/WikiFolder/logic_Wiki.txt");
-                //setLogic(file);
                 setWikiString( file);
                 break;
             case 3:
                 this.file = new File("/Users/alehs/Desktop/Discrete Strucuture/Discrete_Structure_Project/src/WikiFolder/counting_Wiki.txt");
-                //setCounting(file);
                 setWikiString( file);
                 break;
             case 4:
                 this.file = new File("/Users/alehs/Desktop/Discrete Strucuture/Discrete_Structure_Project/src/WikiFolder/combination_Wiki.txt");
-                //setCombination(file);
                 setWikiString( file);
                 break;
             case 5:
                 this. file = new File("/Users/alehs/Desktop/Discrete Strucuture/Discrete_Structure_Project/src/WikiFolder/permutation_Wiki.txt");
-                //setPermutation(file);
                 setWikiString( file);
                 break;
             case 6:
                 this.file = new File("/Users/alehs/Desktop/Discrete Strucuture/Discrete_Structure_Project/src/WikiFolder/pascal_Triangle_Wiki.txt");
-                //setPascalTriangle(file);
                 setWikiString( file);
                 break;
             case 7:
                 this.file = new File("/Users/alehs/Desktop/Discrete Strucuture/Discrete_Structure_Project/src/WikiFolder/induction_Wiki.txt");
-                //setInduction(file);
                 setWikiString( file);
                 break;
             case 8:
                 this.file = new File("/Users/alehs/Desktop/Discrete Strucuture/Discrete_Structure_Project/src/WikiFolder/recursion_Wiki.txt");
-                //setRecursion(file);
                 setWikiString( file);
                 break;
             case 9:
                 this.file = new File("/Users/alehs/Desktop/Discrete Strucuture/Discrete_Structure_Project/src/WikiFolder/fibonacci_Wiki.txt");
-                //setFibonacci(file);
                 setWikiString( file);
                 break;
             case 10:
                 this.file = new File("/Users/alehs/Desktop/Discrete Strucuture/Discrete_Structure_Project/src/WikiFolder/number_Theory_Wiki.txt");
-                //setNumberTheory(file);
                 setWikiString( file);
                 break;
             case 11:
                 this.file = new File("/Users/alehs/Desktop/Discrete Strucuture/Discrete_Structure_Project/src/WikiFolder/number_System_Wiki.txt");
-                //setNumberSystem(file);
                 setWikiString( file);
                 break;
         }
