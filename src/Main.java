@@ -123,18 +123,19 @@ public class Main {
     public static void setTheory(Scanner scanner, int wikiIndex) throws IOException {
         System.out.println("Set Theory is printing");
         Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
-        System.out.println(wiki.getSetTheory());
+        System.out.println(wiki.getWikiString());
     }
 
     public static void logic(Scanner scanner, int wikiIndex) throws IOException{
         System.out.println("Logic is printing");
         Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
-        System.out.println(wiki.getLogic());
+        System.out.println(wiki.getWikiString());
     }
 
     public static void counting(Scanner scanner, int wikiIndex) throws IOException{
         System.out.println("Counting is printing");
         Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
+        System.out.println(wiki.getWikiString());
     }
 
     public static void combination(Scanner scanner, int wikiIndex) throws IOException{
