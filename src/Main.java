@@ -140,7 +140,7 @@ public class Main {
     public static void setTheory(int wikiIndex) throws IOException {
 
         String menu;
-        char operationType;
+        char operationType = ' ';
         char menuOption;
         boolean status = true;
         Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
@@ -169,6 +169,26 @@ public class Main {
             }
 //        }while(status);
 
+        boolean opStatus = true;
+
+            do {
+                if (operationType == 'U'){
+                    JOptionPane.showMessageDialog(null, "Union printing","Set Theory", JOptionPane.INFORMATION_MESSAGE);
+                    opStatus = false;
+                }
+                else if (operationType == 'I'){
+                    JOptionPane.showMessageDialog(null, "Intersection printing","Set Theory", JOptionPane.INFORMATION_MESSAGE);
+                    opStatus = false;
+                }
+                else if (operationType == 'D'){
+                    JOptionPane.showMessageDialog(null, "Difference printing","Set Theory", JOptionPane.INFORMATION_MESSAGE);
+                    opStatus = false;
+                }
+                else{
+                    operationType = JOptionPane.showInputDialog(null, "Invalid Choice, please try again", "Operation Menu", JOptionPane.WARNING_MESSAGE).charAt(0);
+                }
+
+            }while((operationType == 'U' ||operationType == 'I' || operationType == 'D') && status);
 
 
     }
