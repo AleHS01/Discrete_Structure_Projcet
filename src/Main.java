@@ -140,32 +140,34 @@ public class Main {
     public static void setTheory(int wikiIndex) throws IOException {
 
         String menu;
-        String operationMenu;
+        char operationType;
         char menuOption;
         boolean status = true;
+        Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
+        Set_Theory_Operation operation = new Set_Theory_Operation();
 
         menu = "What do you wish to do?\n\tK -- Know more information about set\n\tO -- Perform and Operation";
+        menuOption = JOptionPane.showInputDialog(null, menu, "Set Theory Menu", JOptionPane.PLAIN_MESSAGE).charAt(0);
 
-        menuOption = JOptionPane.showInputDialog(null, menu, "Set Theory Menu", JOptionPane.INFORMATION_MESSAGE).charAt(0);
-        while(status){
+//        do{
             switch (menuOption){
-                case 'I':
-                case 'i':
-                    Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
+                case 'K':
+                case 'k':
                     JOptionPane.showMessageDialog(null, wiki.getWikiString(), "Set Theory Info", JOptionPane.PLAIN_MESSAGE);
                     status = false;
                     break;
                 case 'O':
                 case 'o':
+                    operationType = JOptionPane.showInputDialog(null, operation.miniMenu(),"Operation Menu", JOptionPane.PLAIN_MESSAGE).charAt(0);
                     status = false;
                     break;
                 default:
-                    JOptionPane.showMessageDialog(null, "Error:  " + menuOption + "is an invalid selection - Try Again Please\n",
+                    JOptionPane.showMessageDialog(null, "Error:  '" + menuOption + "' is an invalid selection - Try Again Please\n",
                             "Set Theory", JOptionPane.WARNING_MESSAGE);
+                    status = false;
                     break;
             }
-        }
-
+//        }while(status);
 
 
 
