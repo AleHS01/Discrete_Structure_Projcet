@@ -186,9 +186,10 @@ public class Main {
                 }
                 else{
                     operationType = JOptionPane.showInputDialog(null, "Invalid Choice, please try again", "Operation Menu", JOptionPane.WARNING_MESSAGE).charAt(0);
+                    //need else if statement to sort the choice and call their constructor
                 }
 
-            }while((operationType == 'U' ||operationType == 'I' || operationType == 'D') && status);
+            }while((operationType != 'U' ||operationType != 'I' || operationType != 'D') && !status);
 
 
     }
