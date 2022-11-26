@@ -208,7 +208,6 @@ public class Main {
 
     public static void combination(int wikiIndex) throws IOException{
         System.out.println("Combination is printing");
-        System.out.println("printing");
         Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
     }
 
@@ -238,6 +237,7 @@ public class Main {
     }
     public static void numberTheory(int wikiIndex) throws IOException{
         System.out.println("Number Theory");
+        System.out.println("Theory");
         Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
     }
     public static void numberSystem(int wikiIndex) throws IOException{
