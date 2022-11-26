@@ -208,6 +208,7 @@ public class Main {
 
     public static void combination(int wikiIndex) throws IOException{
         System.out.println("Combination is printing");
+        System.out.println("printing");
         Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
     }
 
