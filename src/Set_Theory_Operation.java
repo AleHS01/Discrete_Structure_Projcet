@@ -1,3 +1,5 @@
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 public class Set_Theory_Operation {
@@ -32,8 +34,17 @@ public class Set_Theory_Operation {
     public void letterUnion(String [] A, String [] B){
 
     }
-    public int getNumUnion(int [] A, int [] B){
-        return 2;
+    public int [] getNumUnion(int [] A, int [] B){
+        int [] unionSet = new int[20];
+
+        for(int i = 0; i < A.length; i++){
+            unionSet [i] = A[i];
+        }
+        for(int i = 0; i < B.length; i++){
+            unionSet [i] = B[i];
+        }
+
+        return unionSet;
     }
     public int getLetterUnion(String [] A, String [] B){
         return 2;
