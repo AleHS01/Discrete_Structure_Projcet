@@ -28,7 +28,7 @@ public class Set_Theory_Operation {
     }
     public String miniMenu(){
 
-        String operationMenu = "What do you wish to perform?\n\tU -- Union of Sets\n\tI -- Intersection of Sets\n\tD -- Difference of Sets";
+        String operationMenu = "What do you wish to perform?\n\tU -- Union of Sets\n\tI -- Intersection of Sets\n\tD -- Difference of Sets\n\tG -- Go Back";
 
         return operationMenu;
     }
