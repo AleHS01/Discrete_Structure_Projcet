@@ -140,14 +140,17 @@ public class Main {
     public static void setTheory(int wikiIndex) throws IOException {
 
         String menu;
+        String operationMiniMenu;
+        String typeOfOperation; //whether is a Letter Unions, or Integers Union
         char operationType = ' ';
         char menuOption;
         boolean status = true;
         Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
-        Set_Theory_Operation operation = new Set_Theory_Operation();
+        Set_Theory_Operation operation;
 
         menu = "What do you wish to do?\n\tK -- Know more information about set\n\tO -- Perform and Operation\n\tG -- Go Back";
-        //menuOption = JOptionPane.showInputDialog(null, menu, "Set Theory Menu", JOptionPane.PLAIN_MESSAGE).charAt(0);
+        operationMiniMenu = "What do you wish to perform?\n\tU -- Union of Sets\n\tI -- Intersection of Sets\n\tD -- Difference of Sets\n\tG -- Go Back";
+        typeOfOperation = "What type of Data will be enter?\n\tL -- Letter/Words\n\t\tOr\n\tI -- integer";
 
         do{
             menuOption = JOptionPane.showInputDialog(null, menu, "Set Theory Menu", JOptionPane.PLAIN_MESSAGE).charAt(0);
@@ -165,7 +168,7 @@ public class Main {
 
                     boolean secondBoolean = true;
                     do{
-                        operationType = JOptionPane.showInputDialog(null, operation.miniMenu(),"Operation Menu", JOptionPane.PLAIN_MESSAGE).charAt(0);
+                        operationType = JOptionPane.showInputDialog(null, operationMiniMenu,"Operation Menu", JOptionPane.PLAIN_MESSAGE).charAt(0);
                         switch (operationType){
                             case 'G':
                             case 'g':
@@ -173,6 +176,8 @@ public class Main {
                                 break;
                             case 'U':
                             case 'u':
+                                char typeChoice =JOptionPane.showInputDialog(null, typeOfOperation,"Data type?", JOptionPane.PLAIN_MESSAGE).charAt(0);
+                                operation = new Set_Theory_Operation();
                                 break;
                             case 'I':
                             case 'i':
@@ -181,45 +186,19 @@ public class Main {
                             case 'd':
                                 break;
                             default:
-                                JOptionPane.showMessageDialog(null, "Error: Adios '" + operationType + "' is an invalid selection - Try Again Please\n",
+                                JOptionPane.showMessageDialog(null, "Error: '" + operationType + "' is an invalid selection - Try Again Please\n",
                                         "Set Theory", JOptionPane.WARNING_MESSAGE);
                                 break;
                         }
                     }while(secondBoolean);
-                    
+
                     break;
                 default:
-                    JOptionPane.showMessageDialog(null, "Error: Hola '" + menuOption + "' is an invalid selection - Try Again Please\n",
+                    JOptionPane.showMessageDialog(null, "Error: '" + menuOption + "' is an invalid selection - Try Again Please\n",
                             "Set Theory", JOptionPane.WARNING_MESSAGE);
                     break;
             }
         }while(status);
-
-         //status = true;
-
-
-//
-//            do {
-//                operationType = JOptionPane.showInputDialog(null, operation.miniMenu(),"Operation Menu", JOptionPane.PLAIN_MESSAGE).charAt(0);
-//                if (operationType == 'U'){
-//                    JOptionPane.showMessageDialog(null, "Union printing","Set Theory", JOptionPane.INFORMATION_MESSAGE);
-//                    opStatus = false;
-//                }
-//                else if (operationType == 'I'){
-//                    JOptionPane.showMessageDialog(null, "Intersection printing","Set Theory", JOptionPane.INFORMATION_MESSAGE);
-//                    opStatus = false;
-//                }
-//                else if (operationType == 'D'){
-//                    JOptionPane.showMessageDialog(null, "Difference printing","Set Theory", JOptionPane.INFORMATION_MESSAGE);
-//                    opStatus = false;
-//                }
-//                else{
-//                    operationType = JOptionPane.showInputDialog(null, "Invalid Choice, please try again", "Operation Menu", JOptionPane.WARNING_MESSAGE).charAt(0);
-//                    //need else if statement to sort the choice and call their constructor
-//                }
-//
-//            }while(opStatus);
-
 
     }
 
