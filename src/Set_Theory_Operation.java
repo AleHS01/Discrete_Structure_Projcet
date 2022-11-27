@@ -18,6 +18,10 @@ public class Set_Theory_Operation {
         //setChoice = '';
 
     }
+    /*Constructor
+    * @Parameter operationType - Type of operation the user wants to make
+    * @Parameter setChoice - Determine what  to method to call depending on the type of values
+    * */
     public Set_Theory_Operation(char operationType, char setChoice){
         this.operationType = operationType;
         this.setChoice = setChoice;
@@ -46,7 +50,17 @@ public class Set_Theory_Operation {
 
         return unionSet;
     }
-    public int getLetterUnion(String [] A, String [] B){
-        return 2;
+    public String [] getLetterUnion(String [] A, String [] B){
+
+        String [] unionSet = new String[20];
+
+        for(int i = 0; i < A.length; i++){
+            unionSet [i] = A[i];
+        }
+        for(int i = 0; i < B.length; i++){
+            unionSet [i] = B[i];
+        }
+
+        return unionSet;
     }
 }
