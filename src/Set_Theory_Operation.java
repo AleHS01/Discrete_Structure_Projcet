@@ -58,7 +58,7 @@ public class Set_Theory_Operation {
             case 'l':
                 //letterSetA
                 getLetterUnion(letterSetA, letterSetB);
-                JOptionPane.showMessageDialog(null,getLetterUnion(letterSetA, letterSetB), "Letters Set",JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null,"Hola", "Letters Set",JOptionPane.INFORMATION_MESSAGE);
                 break;
             case 'i':
             case 'I':

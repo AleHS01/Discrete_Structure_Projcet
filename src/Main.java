@@ -14,6 +14,7 @@ public class Main {
             switch (choice) {
                 case 'Q':
                 case 'q':
+                    JOptionPane.showMessageDialog(null,"Quitting Program", "Quitting",JOptionPane.ERROR_MESSAGE);
                     doneFlag = false;
                     break;
                 case 'S':
@@ -150,7 +151,7 @@ public class Main {
 
         menu = "What do you wish to do?\n\tK -- Know more information about set\n\tO -- Perform and Operation\n\tG -- Go Back";
         operationMiniMenu = "What do you wish to perform?\n\tU -- Union of Sets\n\tI -- Intersection of Sets\n\tD -- Difference of Sets\n\tG -- Go Back";
-        typeOfOperation = "What type of Data will be enter?\n\tL -- Letter/Words\n\t\tOr\n\tI -- integer";
+        typeOfOperation = "What type of Data will be enter?\n\tL -- Letter/Words\n\tI -- Integer\nG -- Go Back";
 
         do{
             menuOption = JOptionPane.showInputDialog(null, menu, "Set Theory Menu", JOptionPane.PLAIN_MESSAGE).charAt(0);
