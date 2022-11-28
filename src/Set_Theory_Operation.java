@@ -51,7 +51,19 @@ public class Set_Theory_Operation {
 
         return operationMenu;
     }
-    public void numUnion(int [] A, int [] B){
+    public void getUnion(){
+
+        switch (setChoice){
+            case 'L':
+            case 'l':
+                //letterSetA
+                getLetterUnion(letterSetA, letterSetB);
+                JOptionPane.showMessageDialog(null,getLetterUnion(letterSetA, letterSetB), "Letters Set",JOptionPane.INFORMATION_MESSAGE);
+                break;
+            case 'i':
+            case 'I':
+                break;
+        }
 
     }
     public void letterUnion(String [] A, String [] B){

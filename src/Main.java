@@ -138,10 +138,10 @@ public class Main {
     }
 
     public static void setTheory(int wikiIndex) throws IOException {
-
         String menu;
         String operationMiniMenu;
         String typeOfOperation; //whether is a Letter Unions, or Integers Union
+        String setA, setB;
         char operationType = ' ';
         char menuOption;
         boolean status = true;
@@ -169,6 +169,7 @@ public class Main {
                     boolean secondBoolean = true;
                     do{
                         operationType = JOptionPane.showInputDialog(null, operationMiniMenu,"Operation Menu", JOptionPane.PLAIN_MESSAGE).charAt(0);
+                        boolean thirdBoolean = true;
                         switch (operationType){
                             case 'G':
                             case 'g':
@@ -176,8 +177,32 @@ public class Main {
                                 break;
                             case 'U':
                             case 'u':
-                                char typeChoice =JOptionPane.showInputDialog(null, typeOfOperation,"Data type?", JOptionPane.PLAIN_MESSAGE).charAt(0);
-                                operation = new Set_Theory_Operation();
+                                do{
+                                    char typeChoice =JOptionPane.showInputDialog(null, typeOfOperation,"Data type?", JOptionPane.PLAIN_MESSAGE).charAt(0);
+                                    switch (typeChoice){
+                                        case 'L':
+                                        case 'l':
+                                            setA = JOptionPane.showInputDialog(null, "Enter first set - Set A\nDivide each element(Letter/Word) by comma","Set A", JOptionPane.PLAIN_MESSAGE);
+                                            setB = JOptionPane.showInputDialog(null, "Enter first set - Set B\nDivide each element(Letter/Word) by comma","Set B", JOptionPane.PLAIN_MESSAGE);
+                                            operation = new Set_Theory_Operation(operationType, typeChoice, setA, setB);
+                                            //operation.getUnion();
+                                            break;
+                                        case 'i':
+                                        case 'I':
+                                            break;
+                                        case 'G':
+                                        case 'g':
+                                            thirdBoolean = false;
+                                            break;
+                                        default:
+                                            JOptionPane.showMessageDialog(null, "Error: '" + typeChoice + "' is an invalid selection - Try Again Please\n",
+                                                    "Data Type?", JOptionPane.WARNING_MESSAGE);
+                                            break;
+                                    }
+                                }while (thirdBoolean);
+
+                                //char typeChoice =JOptionPane.showInputDialog(null, typeOfOperation,"Data type?", JOptionPane.PLAIN_MESSAGE).charAt(0);
+                                //operation = new Set_Theory_Operation();
                                 break;
                             case 'I':
                             case 'i':
