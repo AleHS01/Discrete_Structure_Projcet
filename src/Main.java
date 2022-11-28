@@ -185,8 +185,8 @@ public class Main {
                                         case 'l':
                                             setA = JOptionPane.showInputDialog(null, "Enter first set - Set A\nDivide each element(Letter/Word) by comma","Set A", JOptionPane.PLAIN_MESSAGE);
                                             setB = JOptionPane.showInputDialog(null, "Enter first set - Set B\nDivide each element(Letter/Word) by comma","Set B", JOptionPane.PLAIN_MESSAGE);
-                                            operation = new Set_Theory_Operation(operationType, typeChoice, setA, setB);
-                                            //operation.getUnion();
+                                            operation = new Set_Theory_Operation(operationType, typeChoice);
+                                            operation.setUnion(setA, setB);
                                             break;
                                         case 'i':
                                         case 'I':

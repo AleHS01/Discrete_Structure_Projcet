@@ -8,6 +8,8 @@ public class Set_Theory_Operation {
 
     char setChoice;
     char operationType;
+    int [] numUnionSet = new int[20];
+    String [] letterUnionSet = new String[20];
     String set;
     private int [] numSetA= new int[totalElements];
     private int [] numSetB = new int[totalElements];
@@ -23,11 +25,21 @@ public class Set_Theory_Operation {
     * @Parameter operationType - Type of operation the user wants to make
     * @Parameter setChoice - Determine what  to method to call depending on the type of values
     * */
-    public Set_Theory_Operation(char operationType, char setChoice, String setA, String setB){
+    public Set_Theory_Operation(char operationType, char setChoice){
         this.operationType = operationType;
         this.setChoice = setChoice;
         this.set = set;
 
+
+
+    }
+    public String miniMenu(){
+
+        String operationMenu = "What do you wish to perform?\n\tU -- Union of Sets\n\tI -- Intersection of Sets\n\tD -- Difference of Sets\n\tG -- Go Back";
+
+        return operationMenu;
+    }
+    public void setUnion(String setA, String setB){
         if(setChoice == 'L' || setChoice == 'l'){
             letterSetA = setA.split(",");
             letterSetB =setB.split(",");
@@ -43,55 +55,54 @@ public class Set_Theory_Operation {
                 numSetB[i] = Integer.parseInt(arrB[i]);
             }
         }
-
-    }
-    public String miniMenu(){
-
-        String operationMenu = "What do you wish to perform?\n\tU -- Union of Sets\n\tI -- Intersection of Sets\n\tD -- Difference of Sets\n\tG -- Go Back";
-
-        return operationMenu;
-    }
-    public void getUnion(){
-
         switch (setChoice){
             case 'L':
             case 'l':
                 //letterSetA
-                getLetterUnion(letterSetA, letterSetB);
+                setLetterUnion(letterSetA, letterSetB);
                 JOptionPane.showMessageDialog(null,"Hola", "Letters Set",JOptionPane.INFORMATION_MESSAGE);
                 break;
             case 'i':
             case 'I':
+                setNumUnion(numSetA, numSetB);
                 break;
         }
 
     }
-    public void letterUnion(String [] A, String [] B){
-
-    }
-    public int [] getNumUnion(int [] A, int [] B){
-        int [] unionSet = new int[20];
-
+    public void setLetterUnion(String [] A, String [] B){
         for(int i = 0; i < A.length; i++){
-            unionSet [i] = A[i];
+            letterUnionSet [i] = A[i];
         }
-        for(int i = 0; i < B.length; i++){
-            unionSet [i] = B[i];
+        for(int i = A.length; i < 20; i++){
+            if(B[i] != null)
+            letterUnionSet [i] = B[i];
         }
-
-        return unionSet;
     }
-    public String [] getLetterUnion(String [] A, String [] B){
-
-        String [] unionSet = new String[20];
-
+    public void setNumUnion(int [] A, int [] B){
         for(int i = 0; i < A.length; i++){
-            unionSet [i] = A[i];
+            numUnionSet [i] = A[i];
         }
-        for(int i = 0; i < B.length; i++){
-            unionSet [i] = B[i];
+        for(int i =  A.length; i < 20; i++){
+            if(B[i] != 0)
+            numUnionSet [i] = B[i];
         }
+    }
+    //Getters
+    public String getNumUnion(){
 
-        return unionSet;
+        String str = "";
+        int commaPosition;
+
+        for(int i =0; i < numUnionSet.length; i++){
+            str.concat(Integer.toString(numUnionSet[i]));
+            str.concat(", ");
+        }
+        //commaPosition = str.lastIndexOf(',');
+
+        return str;
+    }
+    public String getLetterUnion(){
+        String str = "";
+        return str;
     }
 }
