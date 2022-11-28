@@ -35,7 +35,7 @@ public class Set_Theory_Operation {
         else{
             String [] arrA = setA.split(",");
             String [] arrB = setA.split(",");
-            
+
             for(int i = 0; 1 < arrA.length; i++){
                 numSetA[i] = Integer.parseInt(arrA[i]);
             }
