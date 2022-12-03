@@ -2,14 +2,15 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import java.util.ArrayList;
 public class Set_Theory_Operation {
 
     private final int totalElements = 10;
 
     char setChoice;
     char operationType;
-    int [] numUnionSet = new int[20];
-    String [] letterUnionSet = new String[20];
+    ArrayList <Integer> numUnionSet = new ArrayList <Integer>();
+    ArrayList <String> letterUnionSet = new ArrayList <String>();
     String set;
     private int [] numSetA= new int[totalElements];
     private int [] numSetB = new int[totalElements];
@@ -48,10 +49,10 @@ public class Set_Theory_Operation {
             String [] arrA = setA.split(",");
             String [] arrB = setA.split(",");
 
-            for(int i = 0; 1 < arrA.length; i++){
+            for(int i = 0; i < arrA.length; i++){
                 numSetA[i] = Integer.parseInt(arrA[i]);
             }
-            for(int i = 0; 1 < arrB.length; i++){
+            for(int i = 0; i < arrB.length; i++){
                 numSetB[i] = Integer.parseInt(arrB[i]);
             }
         }
@@ -60,7 +61,6 @@ public class Set_Theory_Operation {
             case 'l':
                 //letterSetA
                 setLetterUnion(letterSetA, letterSetB);
-                JOptionPane.showMessageDialog(null,"Hola", "Letters Set",JOptionPane.INFORMATION_MESSAGE);
                 break;
             case 'i':
             case 'I':
@@ -71,38 +71,59 @@ public class Set_Theory_Operation {
     }
     public void setLetterUnion(String [] A, String [] B){
         for(int i = 0; i < A.length; i++){
-            letterUnionSet [i] = A[i];
+            letterUnionSet.add(A[i]);
         }
-        for(int i = A.length; i < 20; i++){
+        for(int i = 0; i < B.length; i++){
             if(B[i] != null)
-            letterUnionSet [i] = B[i];
+                letterUnionSet.add(B[i]);
         }
     }
     public void setNumUnion(int [] A, int [] B){
         for(int i = 0; i < A.length; i++){
-            numUnionSet [i] = A[i];
+            numUnionSet.add(A[i]);
         }
-        for(int i =  A.length; i < 20; i++){
+        for(int i = 0; i < B.length; i++){
             if(B[i] != 0)
-            numUnionSet [i] = B[i];
+                numUnionSet.add(B[i]);
         }
     }
     //Getters
     public String getNumUnion(){
 
-        String str = "";
+        String str = "Union:\n";
         int commaPosition;
+        int index = 0;
 
-        for(int i =0; i < numUnionSet.length; i++){
-            str.concat(Integer.toString(numUnionSet[i]));
-            str.concat(", ");
+        while(index < numUnionSet.size()){
+            str = str + numUnionSet.get(index);
+            str = str + ", ";
+            index++;
         }
-        //commaPosition = str.lastIndexOf(',');
+        commaPosition = str.lastIndexOf(',');
+        char [] c = str.toCharArray();
+        c[commaPosition] = ' ';
+        str = String.valueOf(c);
 
         return str;
     }
     public String getLetterUnion(){
-        String str = "";
+        String str = "Union:\n";
+        int commaPosition;
+        int index = 0;
+        while(index < letterUnionSet.size()){
+            str = str +letterUnionSet.get(index);
+            str = str + ", ";
+            index++;
+        }
+//
+//        for(int i = 0; i < letterUnionSet.size(); i++){
+//            str.concat(letterUnionSet.get(i));
+//            str.concat(", ");
+//        }
+        commaPosition = str.lastIndexOf(',');
+        char [] c = str.toCharArray();
+        c[commaPosition] = ' ';
+        str = String.valueOf(c);
         return str;
     }
 }

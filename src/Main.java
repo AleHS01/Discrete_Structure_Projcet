@@ -183,13 +183,19 @@ public class Main {
                                     switch (typeChoice){
                                         case 'L':
                                         case 'l':
-                                            setA = JOptionPane.showInputDialog(null, "Enter first set - Set A\nDivide each element(Letter/Word) by comma","Set A", JOptionPane.PLAIN_MESSAGE);
-                                            setB = JOptionPane.showInputDialog(null, "Enter first set - Set B\nDivide each element(Letter/Word) by comma","Set B", JOptionPane.PLAIN_MESSAGE);
+                                            setA = JOptionPane.showInputDialog(null, "Enter first set - Set A\nDivide each element (Letter/Word) by comma","Set A", JOptionPane.PLAIN_MESSAGE);
+                                            setB = JOptionPane.showInputDialog(null, "Enter first set - Set B\nDivide each element (Letter/Word) by comma","Set B", JOptionPane.PLAIN_MESSAGE);
                                             operation = new Set_Theory_Operation(operationType, typeChoice);
                                             operation.setUnion(setA, setB);
+                                            JOptionPane.showMessageDialog(null, operation.getLetterUnion(), "Letter/Word Union", JOptionPane.PLAIN_MESSAGE);
                                             break;
                                         case 'i':
                                         case 'I':
+                                            setA = JOptionPane.showInputDialog(null, "Enter first set - Set A\nDivide each element (Integer) by comma","Set A", JOptionPane.PLAIN_MESSAGE);
+                                            setB = JOptionPane.showInputDialog(null, "Enter first set - Set B\nDivide each element (Integer) by comma","Set B", JOptionPane.PLAIN_MESSAGE);
+                                            operation = new Set_Theory_Operation(operationType, typeChoice);
+                                            operation.setUnion(setA, setB);
+                                            JOptionPane.showMessageDialog(null, operation.getNumUnion(), "Letter/Word Union", JOptionPane.PLAIN_MESSAGE);
                                             break;
                                         case 'G':
                                         case 'g':
