@@ -1,2 +1,9 @@
-It's actually
-Working
+Set theory, as a separate mathematical discipline, begins in the work of Georg Cantor.
+One might say that set theory was born in late 1873, when he made the amazing discovery that the linear continuum,
+that is, the real line, is not countable, meaning that its points cannot be counted using the natural numbers.
+
+Set theory is important mainly because it serves as a foundation for the rest of mathematics--it provides the axioms from which the rest of mathematics is built up.
+
+Sets are a fundamental idea in the study of mathematics and statistics, but they have a wide range of applications in everyday life.
+Sets are commonly used to represent, gather, and analyse data that is comparable. In today’s world, data is extremely crucial.
+Data is at the heart of every change that occurs today.

@@ -67,7 +67,7 @@ public class Wiki_Discrete{
     private void setWikiString(File file) throws IOException{
         Scanner scan = new Scanner(file);
         while(scan.hasNextLine()){
-            wikiString = wikiString.concat(scan.nextLine() + " ");
+            wikiString = wikiString.concat(scan.nextLine() + "\n");
         }
     }
     public String getWikiString(){

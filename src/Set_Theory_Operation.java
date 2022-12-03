@@ -89,7 +89,7 @@ public class Set_Theory_Operation {
     //Getters
     public String getNumUnion(){
 
-        String str = "Union: " + numUnionSet.size()+"\n";
+        String str = "Union:\n";
         int commaPosition;
         int index = 0;
 
