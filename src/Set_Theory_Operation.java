@@ -47,7 +47,7 @@ public class Set_Theory_Operation {
         }
         else{
             String [] arrA = setA.split(",");
-            String [] arrB = setA.split(",");
+            String [] arrB = setB.split(",");
 
             for(int i = 0; i < arrA.length; i++){
                 numSetA[i] = Integer.parseInt(arrA[i]);
@@ -59,7 +59,6 @@ public class Set_Theory_Operation {
         switch (setChoice){
             case 'L':
             case 'l':
-                //letterSetA
                 setLetterUnion(letterSetA, letterSetB);
                 break;
             case 'i':
@@ -90,13 +89,18 @@ public class Set_Theory_Operation {
     //Getters
     public String getNumUnion(){
 
-        String str = "Union:\n";
+        String str = "Union: " + numUnionSet.size()+"\n";
         int commaPosition;
         int index = 0;
 
         while(index < numUnionSet.size()){
-            str = str + numUnionSet.get(index);
-            str = str + ", ";
+            if(numUnionSet.get(index) != 0){
+                str = str + numUnionSet.get(index);
+                str = str + ", ";
+            }
+
+//            str = str + numUnionSet.get(index);
+//            str = str + ", ";
             index++;
         }
         commaPosition = str.lastIndexOf(',');
@@ -110,16 +114,13 @@ public class Set_Theory_Operation {
         String str = "Union:\n";
         int commaPosition;
         int index = 0;
+
         while(index < letterUnionSet.size()){
             str = str +letterUnionSet.get(index);
             str = str + ", ";
             index++;
         }
-//
-//        for(int i = 0; i < letterUnionSet.size(); i++){
-//            str.concat(letterUnionSet.get(i));
-//            str.concat(", ");
-//        }
+
         commaPosition = str.lastIndexOf(',');
         char [] c = str.toCharArray();
         c[commaPosition] = ' ';
