@@ -195,7 +195,7 @@ public class Main {
                                                 setD = JOptionPane.showInputDialog(null, "Enter first set - Set D\nDivide each element by comma","Set D", JOptionPane.PLAIN_MESSAGE);
                                             }
                                             operation.setMainUnion(setA, setB, setC, setD, setNum);
-                                            JOptionPane.showMessageDialog(null, operation.getUnion(), "Letter/Word Union", JOptionPane.PLAIN_MESSAGE);
+                                            JOptionPane.showMessageDialog(null, operation.getUnion(), "Union", JOptionPane.PLAIN_MESSAGE);
                                             break;
                                         case 'G':
                                         case 'g':
@@ -216,6 +216,7 @@ public class Main {
                                         case 'E':
                                         case 'e':
                                             operation = new Set_Theory_Operation();
+                                            JOptionPane.showMessageDialog(null, "All Sets Need to have equal number of element","Info", JOptionPane.WARNING_MESSAGE);
                                             int setNum = Integer.parseInt(JOptionPane.showInputDialog(null, "How Many sets do You want? (Min 2 - Max 4)", "Count", JOptionPane.PLAIN_MESSAGE));
                                             setA = JOptionPane.showInputDialog(null, "Enter first set - Set A\nDivide each element by comma","Set A", JOptionPane.PLAIN_MESSAGE);
                                             setB = JOptionPane.showInputDialog(null, "Enter first set - Set B\nDivide each element by comma","Set B", JOptionPane.PLAIN_MESSAGE);
@@ -226,7 +227,7 @@ public class Main {
                                                 setD = JOptionPane.showInputDialog(null, "Enter first set - Set D\nDivide each element by comma","Set D", JOptionPane.PLAIN_MESSAGE);
                                             }
                                             operation.setMainIntersection(setA, setB, setC, setD, setNum);
-                                            JOptionPane.showMessageDialog(null, operation.getIntersection(), "Letter/Word Union", JOptionPane.PLAIN_MESSAGE);
+                                            JOptionPane.showMessageDialog(null, operation.getIntersection(), "Intersection", JOptionPane.PLAIN_MESSAGE);
                                             break;
                                         case 'G':
                                         case 'g':

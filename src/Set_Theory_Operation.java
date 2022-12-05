@@ -120,15 +120,6 @@ public class Set_Theory_Operation {
         letterSetA = setA.split(",");
         letterSetB =setB.split(",");
 
-        for(int i = 0; i < 10; i++){
-            if(letterSetA[i] == null){
-                letterSetA[i] ="";
-            }
-            if(letterSetB[i] == null){
-                letterSetB[i] ="";
-            }
-        }
-
         if(setNum == 3){
 
             letterSetC = setC.split(",");
@@ -161,15 +152,7 @@ public class Set_Theory_Operation {
         //IntersectionSet
 
         for(int i = 0; i < A.length; i++){
-
-            if(A[i] == null){
-                A[i] ="";
-            }
-            if(B[i] == null){
-                B[i] ="";
-            }
-
-            if(A[i] == B[i] && (A[i] != "" || B[i] != "")){
+            if(A[i].equals(B[i])){
                 IntersectionSet.add(A[i]);
             }
         }
@@ -182,20 +165,20 @@ public class Set_Theory_Operation {
 
     }
     public String getIntersection(){
-        String str = "Union:\n";
+        String str = "Intersection:\n" + IntersectionSet.size();
         int commaPosition;
         int index = 0;
-
-        while(index < IntersectionSet.size()){
-            str = str + IntersectionSet.get(index);
-            str = str + ", ";
-            index++;
-        }
-
-        commaPosition = str.lastIndexOf(',');
-        char [] c = str.toCharArray();
-        c[commaPosition] = ' ';
-        str = String.valueOf(c);
+//
+//        while(index < IntersectionSet.size()){
+//            str = str + IntersectionSet.get(index);
+//            str = str + ", ";
+//            index++;
+//        }
+//
+//        commaPosition = str.lastIndexOf(',');
+//        char [] c = str.toCharArray();
+//        c[commaPosition] = ' ';
+//        str = String.valueOf(c);
         return str;
     }
 }
