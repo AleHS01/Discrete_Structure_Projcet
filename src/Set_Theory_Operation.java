@@ -159,26 +159,34 @@ public class Set_Theory_Operation {
 
     }
     public void setIntersection(String [] A, String [] B, String [] C){
-
+        for(int i = 0; i < A.length; i++){
+            if(A[i].equals(B[i]) && (A[i].equals(C[i]) && B[i].equals(C[i]))){
+                IntersectionSet.add(A[i]);
+            }
+        }
     }
     public void setIntersection(String [] A, String [] B, String [] C, String [] D){
-
+        for(int i = 0; i < A.length; i++){
+            if(A[i].equals(B[i]) && (A[i].equals(C[i]) && B[i].equals(C[i])) && (A[i].equals(D[i]) && B[i].equals(D[i]) && C[i].equals(D[i]))){
+                IntersectionSet.add(A[i]);
+            }
+        }
     }
     public String getIntersection(){
-        String str = "Intersection:\n" + IntersectionSet.size();
+        String str = "Intersection: " + IntersectionSet.size() + " elements \n";
         int commaPosition;
         int index = 0;
-//
-//        while(index < IntersectionSet.size()){
-//            str = str + IntersectionSet.get(index);
-//            str = str + ", ";
-//            index++;
-//        }
-//
-//        commaPosition = str.lastIndexOf(',');
-//        char [] c = str.toCharArray();
-//        c[commaPosition] = ' ';
-//        str = String.valueOf(c);
+
+        while(index < IntersectionSet.size()){
+            str = str + IntersectionSet.get(index);
+            str = str + ", ";
+            index++;
+        }
+
+        commaPosition = str.lastIndexOf(',');
+        char [] c = str.toCharArray();
+        c[commaPosition] = ' ';
+        str = String.valueOf(c);
         return str;
     }
 }
