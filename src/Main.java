@@ -183,6 +183,7 @@ public class Main {
                                     switch (typeChoice){
                                         case 'E':
                                         case 'e':
+
                                             operation = new Set_Theory_Operation();
                                             int setNum = Integer.parseInt(JOptionPane.showInputDialog(null, "How Many sets do You want? (Min 2 - Max 4)", "Count", JOptionPane.PLAIN_MESSAGE));
                                             setA = JOptionPane.showInputDialog(null, "Enter first set - Set A\nDivide each element by comma","Set A", JOptionPane.PLAIN_MESSAGE);
@@ -193,18 +194,9 @@ public class Main {
                                                 setC = JOptionPane.showInputDialog(null, "Enter first set - Set C\nDivide each element by comma","Set C", JOptionPane.PLAIN_MESSAGE);
                                                 setD = JOptionPane.showInputDialog(null, "Enter first set - Set D\nDivide each element by comma","Set D", JOptionPane.PLAIN_MESSAGE);
                                             }
-                                            //operation = new Set_Theory_Operation(operationType, typeChoice);
-                                            operation.setUnion(setA, setB, setC, setD, setNum);
+                                            operation.setMainUnion(setA, setB, setC, setD, setNum);
                                             JOptionPane.showMessageDialog(null, operation.getUnion(), "Letter/Word Union", JOptionPane.PLAIN_MESSAGE);
                                             break;
-//                                        case 'i':
-//                                        case 'I':
-//                                            setA = JOptionPane.showInputDialog(null, "Enter first set - Set A\nDivide each element (Integer) by comma","Set A", JOptionPane.PLAIN_MESSAGE);
-//                                            setB = JOptionPane.showInputDialog(null, "Enter first set - Set B\nDivide each element (Integer) by comma","Set B", JOptionPane.PLAIN_MESSAGE);
-//                                            operation = new Set_Theory_Operation(operationType, typeChoice);
-//                                            operation.setUnion(setA, setB);
-//                                            JOptionPane.showMessageDialog(null, operation.getNumUnion(), "Integer Union", JOptionPane.PLAIN_MESSAGE);
-//                                            break;
                                         case 'G':
                                         case 'g':
                                             thirdBoolean = false;
@@ -215,12 +207,37 @@ public class Main {
                                             break;
                                     }
                                 }while (thirdBoolean);
-
-                                //char typeChoice =JOptionPane.showInputDialog(null, typeOfOperation,"Data type?", JOptionPane.PLAIN_MESSAGE).charAt(0);
-                                //operation = new Set_Theory_Operation();
                                 break;
                             case 'I':
                             case 'i':
+                                do{
+                                    char typeChoice =JOptionPane.showInputDialog(null, typeOfOperation,"Data type?", JOptionPane.PLAIN_MESSAGE).charAt(0);
+                                    switch (typeChoice){
+                                        case 'E':
+                                        case 'e':
+                                            operation = new Set_Theory_Operation();
+                                            int setNum = Integer.parseInt(JOptionPane.showInputDialog(null, "How Many sets do You want? (Min 2 - Max 4)", "Count", JOptionPane.PLAIN_MESSAGE));
+                                            setA = JOptionPane.showInputDialog(null, "Enter first set - Set A\nDivide each element by comma","Set A", JOptionPane.PLAIN_MESSAGE);
+                                            setB = JOptionPane.showInputDialog(null, "Enter first set - Set B\nDivide each element by comma","Set B", JOptionPane.PLAIN_MESSAGE);
+                                            if(setNum == 3)
+                                                setC = JOptionPane.showInputDialog(null, "Enter first set - Set C\nDivide each element by comma","Set C", JOptionPane.PLAIN_MESSAGE);
+                                            else if(setNum == 4){
+                                                setC = JOptionPane.showInputDialog(null, "Enter first set - Set C\nDivide each element by comma","Set C", JOptionPane.PLAIN_MESSAGE);
+                                                setD = JOptionPane.showInputDialog(null, "Enter first set - Set D\nDivide each element by comma","Set D", JOptionPane.PLAIN_MESSAGE);
+                                            }
+                                            operation.setMainIntersection(setA, setB, setC, setD, setNum);
+                                            JOptionPane.showMessageDialog(null, operation.getIntersection(), "Letter/Word Union", JOptionPane.PLAIN_MESSAGE);
+                                            break;
+                                        case 'G':
+                                        case 'g':
+                                            thirdBoolean = false;
+                                            break;
+                                        default:
+                                            JOptionPane.showMessageDialog(null, "Error: '" + typeChoice + "' is an invalid selection - Try Again Please\n",
+                                                    "Data Type?", JOptionPane.WARNING_MESSAGE);
+                                            break;
+                                    }
+                                }while (thirdBoolean);
                                 break;
                             case 'D':
                             case 'd':

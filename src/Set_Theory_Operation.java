@@ -9,11 +9,8 @@ public class Set_Theory_Operation {
 
     char setChoice;
     char operationType;
-    ArrayList <Integer> numUnionSet = new ArrayList <Integer>();
     ArrayList <String> UnionSet = new ArrayList <String>();
-    String set;
-    private int [] numSetA= new int[totalElements];
-    private int [] numSetB = new int[totalElements];
+    ArrayList <String> IntersectionSet = new ArrayList <String>();
     private String[] letterSetA = new String [totalElements];
     private String[] letterSetB = new String [totalElements];
     private String[] letterSetC = new String [totalElements];
@@ -31,7 +28,6 @@ public class Set_Theory_Operation {
     public Set_Theory_Operation(char operationType, char setChoice){
         this.operationType = operationType;
         this.setChoice = setChoice;
-        this.set = set;
 
     }
     public String miniMenu(){
@@ -40,8 +36,7 @@ public class Set_Theory_Operation {
 
         return operationMenu;
     }
-    public void setUnion(String setA, String setB, String setC, String setD, int setNum){
-        //if(setChoice == 'L' || setChoice == 'l'){
+    public void setMainUnion(String setA, String setB, String setC, String setD, int setNum){
             letterSetA = setA.split(",");
             letterSetB =setB.split(",");
 
@@ -57,32 +52,6 @@ public class Set_Theory_Operation {
             else{
                 setUnion(letterSetA, letterSetB);
             }
-
-            //letterSetC = setC.split(",");
-            //letterSetD =setD.split(",");
-//        }
-//        else{
-//            String [] arrA = setA.split(",");
-//            String [] arrB = setB.split(",");
-//
-//            for(int i = 0; i < arrA.length; i++){
-//                numSetA[i] = Integer.parseInt(arrA[i]);
-//            }
-//            for(int i = 0; i < arrB.length; i++){
-//                numSetB[i] = Integer.parseInt(arrB[i]);
-//            }
-//        }
-//        switch (setChoice){
-//            case 'L':
-//            case 'l':
-                //setUnion(letterSetA, letterSetB);
-//                break;
-//            case 'i':
-//            case 'I':
-//                setNumUnion(numSetA, numSetB);
-//                break;
-//        }
-
     }
     public void setUnion(String [] A, String [] B){
         for(int i = 0; i < A.length; i++){
@@ -125,40 +94,7 @@ public class Set_Theory_Operation {
         }
     }
 
-    public void setNumUnion(int [] A, int [] B){
-        for(int i = 0; i < A.length; i++){
-            numUnionSet.add(A[i]);
-        }
-        for(int i = 0; i < B.length; i++){
-            if(B[i] != 0)
-                numUnionSet.add(B[i]);
-        }
-    }
-    //Getters
-    public String getNumUnion(){
-
-        String str = "Union:\n";
-        int commaPosition;
-        int index = 0;
-
-        while(index < numUnionSet.size()){
-            if(numUnionSet.get(index) != 0){
-                str = str + numUnionSet.get(index);
-                str = str + ", ";
-            }
-
-//            str = str + numUnionSet.get(index);
-//            str = str + ", ";
-            index++;
-        }
-        commaPosition = str.lastIndexOf(',');
-        char [] c = str.toCharArray();
-        c[commaPosition] = ' ';
-        str = String.valueOf(c);
-
-        return str;
-    }
-    public String getLetterUnion(){
+    public String getUnion(){
         String str = "Union:\n";
         int commaPosition;
         int index = 0;
@@ -175,13 +111,83 @@ public class Set_Theory_Operation {
         str = String.valueOf(c);
         return str;
     }
-    public String getUnion(){
+
+    /*Methods: Intersection
+    *
+    */
+
+    public void setMainIntersection(String setA, String setB, String setC, String setD, int setNum){
+        letterSetA = setA.split(",");
+        letterSetB =setB.split(",");
+
+        for(int i = 0; i < 10; i++){
+            if(letterSetA[i] == null){
+                letterSetA[i] ="";
+            }
+            if(letterSetB[i] == null){
+                letterSetB[i] ="";
+            }
+        }
+
+        if(setNum == 3){
+
+            letterSetC = setC.split(",");
+            for(int i = 0; i < 10; i++) {
+                if (letterSetC[i] == null) {
+                    letterSetC[i] = "";
+                }
+            }
+            setIntersection(letterSetA, letterSetB, letterSetC);
+        }
+        else if(setNum == 4){
+            letterSetC = setC.split(",");
+            letterSetD =setD.split(",");
+            for(int i = 0; i < 10; i++){
+                if(letterSetC[i] == null){
+                    letterSetC[i] ="";
+                }
+                if(letterSetD[i] == null){
+                    letterSetD[i] ="";
+                }
+            }
+            setIntersection(letterSetA, letterSetB, letterSetC,letterSetD);
+
+        }
+        else{
+            setIntersection(letterSetA, letterSetB);
+        }
+    }
+    public void setIntersection(String [] A, String [] B){
+        //IntersectionSet
+
+        for(int i = 0; i < A.length; i++){
+
+            if(A[i] == null){
+                A[i] ="";
+            }
+            if(B[i] == null){
+                B[i] ="";
+            }
+
+            if(A[i] == B[i] && (A[i] != "" || B[i] != "")){
+                IntersectionSet.add(A[i]);
+            }
+        }
+
+    }
+    public void setIntersection(String [] A, String [] B, String [] C){
+
+    }
+    public void setIntersection(String [] A, String [] B, String [] C, String [] D){
+
+    }
+    public String getIntersection(){
         String str = "Union:\n";
         int commaPosition;
         int index = 0;
 
-        while(index < UnionSet.size()){
-            str = str + UnionSet.get(index);
+        while(index < IntersectionSet.size()){
+            str = str + IntersectionSet.get(index);
             str = str + ", ";
             index++;
         }
