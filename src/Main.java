@@ -142,7 +142,7 @@ public class Main {
         String menu;
         String operationMiniMenu;
         String typeOfOperation; //whether is a Letter Unions, or Integers Union
-        String setA, setB;
+        String setA, setB, setC = "", setD = "";
         char operationType = ' ';
         char menuOption;
         boolean status = true;
@@ -151,7 +151,7 @@ public class Main {
 
         menu = "What do you wish to do?\n\tK -- Know more information about set\n\tO -- Perform and Operation\n\tG -- Go Back";
         operationMiniMenu = "What do you wish to perform?\n\tU -- Union of Sets\n\tI -- Intersection of Sets\n\tD -- Difference of Sets\n\tG -- Go Back";
-        typeOfOperation = "What type of Data will be enter?\n\tL -- Letter/Words\n\tI -- Integer\nG -- Go Back";
+        typeOfOperation = "What type of Data will be enter?\n\tE - Enter sets\n\tG -- Go Back";
 
         do{
             menuOption = JOptionPane.showInputDialog(null, menu, "Set Theory Menu", JOptionPane.PLAIN_MESSAGE).charAt(0);
@@ -181,22 +181,30 @@ public class Main {
                                 do{
                                     char typeChoice =JOptionPane.showInputDialog(null, typeOfOperation,"Data type?", JOptionPane.PLAIN_MESSAGE).charAt(0);
                                     switch (typeChoice){
-                                        case 'L':
-                                        case 'l':
-                                            setA = JOptionPane.showInputDialog(null, "Enter first set - Set A\nDivide each element (Letter/Word) by comma","Set A", JOptionPane.PLAIN_MESSAGE);
-                                            setB = JOptionPane.showInputDialog(null, "Enter first set - Set B\nDivide each element (Letter/Word) by comma","Set B", JOptionPane.PLAIN_MESSAGE);
-                                            operation = new Set_Theory_Operation(operationType, typeChoice);
-                                            operation.setUnion(setA, setB);
-                                            JOptionPane.showMessageDialog(null, operation.getLetterUnion(), "Letter/Word Union", JOptionPane.PLAIN_MESSAGE);
+                                        case 'E':
+                                        case 'e':
+                                            operation = new Set_Theory_Operation();
+                                            int setNum = Integer.parseInt(JOptionPane.showInputDialog(null, "How Many sets do You want? (Min 2 - Max 4)", "Count", JOptionPane.PLAIN_MESSAGE));
+                                            setA = JOptionPane.showInputDialog(null, "Enter first set - Set A\nDivide each element by comma","Set A", JOptionPane.PLAIN_MESSAGE);
+                                            setB = JOptionPane.showInputDialog(null, "Enter first set - Set B\nDivide each element by comma","Set B", JOptionPane.PLAIN_MESSAGE);
+                                            if(setNum == 3)
+                                                setC = JOptionPane.showInputDialog(null, "Enter first set - Set C\nDivide each element by comma","Set C", JOptionPane.PLAIN_MESSAGE);
+                                            else if(setNum == 4){
+                                                setC = JOptionPane.showInputDialog(null, "Enter first set - Set C\nDivide each element by comma","Set C", JOptionPane.PLAIN_MESSAGE);
+                                                setD = JOptionPane.showInputDialog(null, "Enter first set - Set D\nDivide each element by comma","Set D", JOptionPane.PLAIN_MESSAGE);
+                                            }
+                                            //operation = new Set_Theory_Operation(operationType, typeChoice);
+                                            operation.setUnion(setA, setB, setC, setD, setNum);
+                                            JOptionPane.showMessageDialog(null, operation.getUnion(), "Letter/Word Union", JOptionPane.PLAIN_MESSAGE);
                                             break;
-                                        case 'i':
-                                        case 'I':
-                                            setA = JOptionPane.showInputDialog(null, "Enter first set - Set A\nDivide each element (Integer) by comma","Set A", JOptionPane.PLAIN_MESSAGE);
-                                            setB = JOptionPane.showInputDialog(null, "Enter first set - Set B\nDivide each element (Integer) by comma","Set B", JOptionPane.PLAIN_MESSAGE);
-                                            operation = new Set_Theory_Operation(operationType, typeChoice);
-                                            operation.setUnion(setA, setB);
-                                            JOptionPane.showMessageDialog(null, operation.getNumUnion(), "Integer Union", JOptionPane.PLAIN_MESSAGE);
-                                            break;
+//                                        case 'i':
+//                                        case 'I':
+//                                            setA = JOptionPane.showInputDialog(null, "Enter first set - Set A\nDivide each element (Integer) by comma","Set A", JOptionPane.PLAIN_MESSAGE);
+//                                            setB = JOptionPane.showInputDialog(null, "Enter first set - Set B\nDivide each element (Integer) by comma","Set B", JOptionPane.PLAIN_MESSAGE);
+//                                            operation = new Set_Theory_Operation(operationType, typeChoice);
+//                                            operation.setUnion(setA, setB);
+//                                            JOptionPane.showMessageDialog(null, operation.getNumUnion(), "Integer Union", JOptionPane.PLAIN_MESSAGE);
+//                                            break;
                                         case 'G':
                                         case 'g':
                                             thirdBoolean = false;

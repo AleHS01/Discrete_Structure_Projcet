@@ -10,12 +10,14 @@ public class Set_Theory_Operation {
     char setChoice;
     char operationType;
     ArrayList <Integer> numUnionSet = new ArrayList <Integer>();
-    ArrayList <String> letterUnionSet = new ArrayList <String>();
+    ArrayList <String> UnionSet = new ArrayList <String>();
     String set;
     private int [] numSetA= new int[totalElements];
     private int [] numSetB = new int[totalElements];
     private String[] letterSetA = new String [totalElements];
     private String[] letterSetB = new String [totalElements];
+    private String[] letterSetC = new String [totalElements];
+    private String[] letterSetD = new String [totalElements];
 
     public Set_Theory_Operation(){
         //operationType ='';
@@ -31,8 +33,6 @@ public class Set_Theory_Operation {
         this.setChoice = setChoice;
         this.set = set;
 
-
-
     }
     public String miniMenu(){
 
@@ -40,43 +40,79 @@ public class Set_Theory_Operation {
 
         return operationMenu;
     }
-    public void setUnion(String setA, String setB){
-        if(setChoice == 'L' || setChoice == 'l'){
+    public void setUnion(String setA, String setB, String setC, String setD, int setNum){
+        //if(setChoice == 'L' || setChoice == 'l'){
             letterSetA = setA.split(",");
             letterSetB =setB.split(",");
-        }
-        else{
-            String [] arrA = setA.split(",");
-            String [] arrB = setB.split(",");
 
-            for(int i = 0; i < arrA.length; i++){
-                numSetA[i] = Integer.parseInt(arrA[i]);
+            if(setNum == 3){
+                letterSetC = setC.split(",");
+                setUnion(letterSetA, letterSetB, letterSetC);
             }
-            for(int i = 0; i < arrB.length; i++){
-                numSetB[i] = Integer.parseInt(arrB[i]);
+            else if(setNum == 4){
+                letterSetC = setC.split(",");
+                letterSetD =setD.split(",");
+                setUnion(letterSetA, letterSetB, letterSetC,letterSetD);
             }
-        }
-        switch (setChoice){
-            case 'L':
-            case 'l':
-                setLetterUnion(letterSetA, letterSetB);
-                break;
-            case 'i':
-            case 'I':
-                setNumUnion(numSetA, numSetB);
-                break;
-        }
+            else{
+                setUnion(letterSetA, letterSetB);
+            }
+
+            //letterSetC = setC.split(",");
+            //letterSetD =setD.split(",");
+//        }
+//        else{
+//            String [] arrA = setA.split(",");
+//            String [] arrB = setB.split(",");
+//
+//            for(int i = 0; i < arrA.length; i++){
+//                numSetA[i] = Integer.parseInt(arrA[i]);
+//            }
+//            for(int i = 0; i < arrB.length; i++){
+//                numSetB[i] = Integer.parseInt(arrB[i]);
+//            }
+//        }
+//        switch (setChoice){
+//            case 'L':
+//            case 'l':
+                //setUnion(letterSetA, letterSetB);
+//                break;
+//            case 'i':
+//            case 'I':
+//                setNumUnion(numSetA, numSetB);
+//                break;
+//        }
 
     }
-    public void setLetterUnion(String [] A, String [] B){
+    public void setUnion(String [] A, String [] B){
         for(int i = 0; i < A.length; i++){
-            letterUnionSet.add(A[i]);
+            UnionSet.add(A[i]);
         }
         for(int i = 0; i < B.length; i++){
             if(B[i] != null)
-                letterUnionSet.add(B[i]);
+                UnionSet.add(B[i]);
         }
     }
+
+    public void setUnion(String [] A, String [] B, String [] C){
+        for(int i = 0; i < A.length; i++){
+            UnionSet.add(A[i]);
+        }
+        for(int i = 0; i < B.length; i++){
+            if(B[i] != null)
+                UnionSet.add(B[i]);
+        }
+    }
+    public void setUnion(String [] A, String [] B, String [] C, String [] D){
+        for(int i = 0; i < A.length; i++){
+            UnionSet.add(A[i]);
+        }
+        for(int i = 0; i < B.length; i++){
+            if(B[i] != null)
+                UnionSet.add(B[i]);
+        }
+    }
+
     public void setNumUnion(int [] A, int [] B){
         for(int i = 0; i < A.length; i++){
             numUnionSet.add(A[i]);
@@ -115,8 +151,25 @@ public class Set_Theory_Operation {
         int commaPosition;
         int index = 0;
 
-        while(index < letterUnionSet.size()){
-            str = str +letterUnionSet.get(index);
+        while(index < UnionSet.size()){
+            str = str + UnionSet.get(index);
+            str = str + ", ";
+            index++;
+        }
+
+        commaPosition = str.lastIndexOf(',');
+        char [] c = str.toCharArray();
+        c[commaPosition] = ' ';
+        str = String.valueOf(c);
+        return str;
+    }
+    public String getUnion(){
+        String str = "Union:\n";
+        int commaPosition;
+        int index = 0;
+
+        while(index < UnionSet.size()){
+            str = str + UnionSet.get(index);
             str = str + ", ";
             index++;
         }
