@@ -179,7 +179,7 @@ public class Main {
                             case 'U':
                             case 'u':
                                 do{
-                                    char typeChoice =JOptionPane.showInputDialog(null, typeOfOperation,"Data type?", JOptionPane.PLAIN_MESSAGE).charAt(0);
+                                    char typeChoice =JOptionPane.showInputDialog(null, typeOfOperation,"Menu", JOptionPane.PLAIN_MESSAGE).charAt(0);
                                     switch (typeChoice){
                                         case 'E':
                                         case 'e':
@@ -203,7 +203,7 @@ public class Main {
                                             break;
                                         default:
                                             JOptionPane.showMessageDialog(null, "Error: '" + typeChoice + "' is an invalid selection - Try Again Please\n",
-                                                    "Data Type?", JOptionPane.WARNING_MESSAGE);
+                                                    "Menu", JOptionPane.WARNING_MESSAGE);
                                             break;
                                     }
                                 }while (thirdBoolean);
@@ -211,7 +211,7 @@ public class Main {
                             case 'I':
                             case 'i':
                                 do{
-                                    char typeChoice =JOptionPane.showInputDialog(null, typeOfOperation,"Data type?", JOptionPane.PLAIN_MESSAGE).charAt(0);
+                                    char typeChoice =JOptionPane.showInputDialog(null, typeOfOperation,"Menu", JOptionPane.PLAIN_MESSAGE).charAt(0);
                                     switch (typeChoice){
                                         case 'E':
                                         case 'e':
@@ -234,13 +234,41 @@ public class Main {
                                             break;
                                         default:
                                             JOptionPane.showMessageDialog(null, "Error: '" + typeChoice + "' is an invalid selection - Try Again Please\n",
-                                                    "Data Type?", JOptionPane.WARNING_MESSAGE);
+                                                    "Menu", JOptionPane.WARNING_MESSAGE);
                                             break;
                                     }
                                 }while (thirdBoolean);
                                 break;
                             case 'D':
                             case 'd':
+                                do{
+                                    char typeChoice =JOptionPane.showInputDialog(null, typeOfOperation,"Menu", JOptionPane.PLAIN_MESSAGE).charAt(0);
+                                    switch (typeChoice){
+                                        case 'E':
+                                        case 'e':
+                                            operation = new Set_Theory_Operation();
+                                            int setNum = Integer.parseInt(JOptionPane.showInputDialog(null, "How Many sets do You want? (Min 2 - Max 4)", "Count", JOptionPane.PLAIN_MESSAGE));
+                                            setA = JOptionPane.showInputDialog(null, "Enter first set - Set A\nDivide each element by comma","Set A", JOptionPane.PLAIN_MESSAGE);
+                                            setB = JOptionPane.showInputDialog(null, "Enter first set - Set B\nDivide each element by comma","Set B", JOptionPane.PLAIN_MESSAGE);
+                                            if(setNum == 3)
+                                                setC = JOptionPane.showInputDialog(null, "Enter first set - Set C\nDivide each element by comma","Set C", JOptionPane.PLAIN_MESSAGE);
+                                            else if(setNum == 4){
+                                                setC = JOptionPane.showInputDialog(null, "Enter first set - Set C\nDivide each element by comma","Set C", JOptionPane.PLAIN_MESSAGE);
+                                                setD = JOptionPane.showInputDialog(null, "Enter first set - Set D\nDivide each element by comma","Set D", JOptionPane.PLAIN_MESSAGE);
+                                            }
+                                            operation.setMainDifference(setA, setB, setC, setD, setNum);
+                                            JOptionPane.showMessageDialog(null, operation.getDifference(), "Intersection", JOptionPane.PLAIN_MESSAGE);
+                                            break;
+                                        case 'G':
+                                        case 'g':
+                                            thirdBoolean = false;
+                                            break;
+                                        default:
+                                            JOptionPane.showMessageDialog(null, "Error: '" + typeChoice + "' is an invalid selection - Try Again Please\n",
+                                                    "Menu", JOptionPane.WARNING_MESSAGE);
+                                            break;
+                                    }
+                                }while (thirdBoolean);
                                 break;
                             default:
                                 JOptionPane.showMessageDialog(null, "Error: '" + operationType + "' is an invalid selection - Try Again Please\n",

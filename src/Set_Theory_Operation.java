@@ -1,10 +1,6 @@
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
 
 public class Set_Theory_Operation {
 
@@ -14,7 +10,7 @@ public class Set_Theory_Operation {
     char operationType;
     ArrayList <String> UnionSet = new ArrayList <String>();
     ArrayList <String> IntersectionSet = new ArrayList <String>();
-    Set<String> interSet = new HashSet<>();
+    ArrayList <String> DifferenceSet = new ArrayList <String>();
     private String[] letterSetA = new String [totalElements];
     private String[] letterSetB = new String [totalElements];
     private String[] letterSetC = new String [totalElements];
@@ -183,8 +179,6 @@ public class Set_Theory_Operation {
         int commaPosition;
         int index = 0;
 
-//        for(String i : IntersectionSet)
-//            str = (i + ", ");
         while(index < IntersectionSet.size()){
             str = str + IntersectionSet.get(index);
             str = str + ", ";
@@ -195,6 +189,65 @@ public class Set_Theory_Operation {
         char [] c = str.toCharArray();
         c[commaPosition] = ' ';
         str = String.valueOf(c);
+        return str;
+    }
+
+    /*Methods: Difference of Set
+    */
+
+    public void setMainDifference(String setA, String setB, String setC, String setD, int setNum){
+
+        letterSetA = setA.split(",");
+        letterSetB =setB.split(",");
+
+        if(setNum == 3){
+
+            letterSetC = setC.split(",");
+            setDifference(letterSetA, letterSetB, letterSetC);
+        }
+        else if(setNum == 4){
+            letterSetC = setC.split(",");
+            letterSetD =setD.split(",");
+            setDifference(letterSetA, letterSetB, letterSetC,letterSetD);
+
+        }
+        else{
+            setDifference(letterSetA, letterSetB);
+        }
+    }
+    public void setDifference(String [] A, String [] B){
+        //DifferenceSet
+        for(int i = 0; i < A.length; i++){
+            for(int j = 0; j <B.length; j++){
+                if(!A[i].equals(B[j])){
+                    DifferenceSet.add(A[i]);
+                }
+            }
+
+        }
+    }
+    public void setDifference(String [] A, String [] B, String [] C){
+
+    }
+    public void setDifference(String [] A, String [] B, String [] C, String [] D){
+
+    }
+
+    public String getDifference(){
+        String str = "Differences: " + DifferenceSet.size() + " elements \n";
+//        int commaPosition;
+//        int index = 0;
+//
+//        while(index < DifferenceSet.size()){
+//            str = str + DifferenceSet.get(index);
+//            str = str + ", ";
+//            index++;
+//        }
+//
+//        commaPosition = str.lastIndexOf(',');
+//        char [] c = str.toCharArray();
+//        c[commaPosition] = ' ';
+//        str = String.valueOf(c);
         return str;
     }
 }
