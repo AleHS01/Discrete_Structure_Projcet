@@ -127,24 +127,11 @@ public class Set_Theory_Operation {
         if(setNum == 3){
 
             letterSetC = setC.split(",");
-            for(int i = 0; i < 10; i++) {
-                if (letterSetC[i] == null) {
-                    letterSetC[i] = "";
-                }
-            }
             setIntersection(letterSetA, letterSetB, letterSetC);
         }
         else if(setNum == 4){
             letterSetC = setC.split(",");
             letterSetD =setD.split(",");
-            for(int i = 0; i < 10; i++){
-                if(letterSetC[i] == null){
-                    letterSetC[i] ="";
-                }
-                if(letterSetD[i] == null){
-                    letterSetD[i] ="";
-                }
-            }
             setIntersection(letterSetA, letterSetB, letterSetC,letterSetD);
 
         }
@@ -160,7 +147,6 @@ public class Set_Theory_Operation {
             for(int j = 0; j <B.length; j++){
                 if(A[i].equals(B[j])){
                     IntersectionSet.add(A[i]);
-                    //break;
                 }
             }
 
@@ -169,15 +155,26 @@ public class Set_Theory_Operation {
     }
     public void setIntersection(String [] A, String [] B, String [] C){
         for(int i = 0; i < A.length; i++){
-            if(A[i].equals(B[i]) && (A[i].equals(C[i]) && B[i].equals(C[i]))){
-                IntersectionSet.add(A[i]);
+            for(int j = 0; j <B.length; j++){
+                for(int k = 0; k <C.length; k++){
+                    if(A[i].equals(B[j]) && (A[i].equals(C[k]) && B[j].equals(C[k]))){
+                        IntersectionSet.add(A[i]);
+                    }
+                }
             }
         }
     }
     public void setIntersection(String [] A, String [] B, String [] C, String [] D){
+
         for(int i = 0; i < A.length; i++){
-            if(A[i].equals(B[i]) && (A[i].equals(C[i]) && B[i].equals(C[i])) && (A[i].equals(D[i]) && B[i].equals(D[i]) && C[i].equals(D[i]))){
-                IntersectionSet.add(A[i]);
+            for(int j = 0; j <B.length; j++){
+                for(int k = 0; k <C.length; k++){
+                    for(int l = 0; l <D.length; l++){
+                        if(A[i].equals(B[j]) && (A[i].equals(C[k]) && B[j].equals(C[k])) && (A[i].equals(D[l]) && B[j].equals(D[l]) && C[k].equals(D[l]))){
+                            IntersectionSet.add(A[i]);
+                        }
+                    }
+                }
             }
         }
     }

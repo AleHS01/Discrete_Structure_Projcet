@@ -216,7 +216,6 @@ public class Main {
                                         case 'E':
                                         case 'e':
                                             operation = new Set_Theory_Operation();
-                                            JOptionPane.showMessageDialog(null, "All Sets Need to have equal number of element","Info", JOptionPane.WARNING_MESSAGE);
                                             int setNum = Integer.parseInt(JOptionPane.showInputDialog(null, "How Many sets do You want? (Min 2 - Max 4)", "Count", JOptionPane.PLAIN_MESSAGE));
                                             setA = JOptionPane.showInputDialog(null, "Enter first set - Set A\nDivide each element by comma","Set A", JOptionPane.PLAIN_MESSAGE);
                                             setB = JOptionPane.showInputDialog(null, "Enter first set - Set B\nDivide each element by comma","Set B", JOptionPane.PLAIN_MESSAGE);
