@@ -102,6 +102,10 @@ public class Set_Theory_Operation {
             if(B[i] != null)
                 UnionSet.add(B[i]);
         }
+        for(int i = 0; i < C.length; i++){
+            if(C[i] != null)
+                UnionSet.add(C[i]);
+        }
     }
     public void setUnion(String [] A, String [] B, String [] C, String [] D){
         for(int i = 0; i < A.length; i++){
@@ -110,6 +114,14 @@ public class Set_Theory_Operation {
         for(int i = 0; i < B.length; i++){
             if(B[i] != null)
                 UnionSet.add(B[i]);
+        }
+        for(int i = 0; i < C.length; i++){
+            if(C[i] != null)
+                UnionSet.add(C[i]);
+        }
+        for(int i = 0; i < D.length; i++){
+            if(D[i] != null)
+                UnionSet.add(D[i]);
         }
     }
 
