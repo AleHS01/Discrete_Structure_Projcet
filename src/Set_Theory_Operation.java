@@ -3,6 +3,9 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+
 public class Set_Theory_Operation {
 
     private final int totalElements = 10;
@@ -11,6 +14,7 @@ public class Set_Theory_Operation {
     char operationType;
     ArrayList <String> UnionSet = new ArrayList <String>();
     ArrayList <String> IntersectionSet = new ArrayList <String>();
+    Set<String> interSet = new HashSet<>();
     private String[] letterSetA = new String [totalElements];
     private String[] letterSetB = new String [totalElements];
     private String[] letterSetC = new String [totalElements];
@@ -150,11 +154,16 @@ public class Set_Theory_Operation {
     }
     public void setIntersection(String [] A, String [] B){
         //IntersectionSet
+        //interSet
 
         for(int i = 0; i < A.length; i++){
-            if(A[i].equals(B[i])){
-                IntersectionSet.add(A[i]);
+            for(int j = 0; j <B.length; j++){
+                if(A[i].equals(B[j])){
+                    IntersectionSet.add(A[i]);
+                    //break;
+                }
             }
+
         }
 
     }
@@ -177,6 +186,8 @@ public class Set_Theory_Operation {
         int commaPosition;
         int index = 0;
 
+//        for(String i : IntersectionSet)
+//            str = (i + ", ");
         while(index < IntersectionSet.size()){
             str = str + IntersectionSet.get(index);
             str = str + ", ";
