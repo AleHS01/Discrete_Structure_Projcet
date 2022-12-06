@@ -149,7 +149,7 @@ public class Main {
         Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
         Set_Theory_Operation operation;
 
-        menu = "What do you wish to do?\n\tK -- Know more information about set\n\tO -- Perform and Operation\n\tG -- Go Back";
+        menu = "What do you wish to do?\n\tI -- Info: more information about set\n\tO -- Perform and Operation\n\tG -- Go Back";
         operationMiniMenu = "What do you wish to perform?\n\tU -- Union of Sets\n\tI -- Intersection of Sets\n\tD -- Difference of Sets\n\tG -- Go Back";
         typeOfOperation = "How Many sets do you Want to Work With\n\t2 -- Two Sets\n\t3 -- Three Sets\n\t4 -- Four Set\n\tG -- Go Back";
 
@@ -160,8 +160,8 @@ public class Main {
                 case 'g':
                     status = false;
                     break;
-                case 'K':
-                case 'k':
+                case 'i':
+                case 'I':
                     JOptionPane.showMessageDialog(null, wiki.getWikiString(), "Set Theory Info", JOptionPane.PLAIN_MESSAGE);
                     break;
                 case 'O':
@@ -247,32 +247,6 @@ public class Main {
                                     char c;
                                     int val;
                                     switch (typeChoice){
-//                                        case 'E':
-//                                        case 'e':
-//                                            //operation = new Set_Theory_Operation();
-//                                            //int setNum = Integer.parseInt(JOptionPane.showInputDialog(null, "How Many sets do You want? (Min 2 - Max 4)", "Count", JOptionPane.PLAIN_MESSAGE));
-//                                            //char c;
-//                                            if(setNum == 3){
-//                                                c = JOptionPane.showInputDialog(null, "What Set Do You Want to Differentiate?\n\tSet A\n\tSet B\n\tSet C", "Count", JOptionPane.PLAIN_MESSAGE).charAt(0);
-//                                                setA = JOptionPane.showInputDialog(null, "Enter First set - Set A\nDivide each element by comma","Set A", JOptionPane.PLAIN_MESSAGE);
-//                                                setB = JOptionPane.showInputDialog(null, "Enter Second set - Set B\nDivide each element by comma","Set B", JOptionPane.PLAIN_MESSAGE);
-//                                                setC = JOptionPane.showInputDialog(null, "Enter Third set - Set C\nDivide each element by comma","Set C", JOptionPane.PLAIN_MESSAGE);
-//                                            }
-//                                            else if(setNum == 4){
-//                                                c = JOptionPane.showInputDialog(null, "What Set Do You Want to Differentiate?\n\tSet A\n\tSet B\n\tSet C\n\tSet D", "Count", JOptionPane.PLAIN_MESSAGE).charAt(0);
-//                                                setA = JOptionPane.showInputDialog(null, "Enter First set - Set A\nDivide each element by comma","Set A", JOptionPane.PLAIN_MESSAGE);
-//                                                setB = JOptionPane.showInputDialog(null, "Enter Second set - Set B\nDivide each element by comma","Set B", JOptionPane.PLAIN_MESSAGE);
-//                                                setC = JOptionPane.showInputDialog(null, "Enter Third set - Set C\nDivide each element by comma","Set C", JOptionPane.PLAIN_MESSAGE);
-//                                                setD = JOptionPane.showInputDialog(null, "Enter Fourth set - Set D\nDivide each element by comma","Set D", JOptionPane.PLAIN_MESSAGE);
-//                                            }
-//                                            else{
-//                                                c = JOptionPane.showInputDialog(null, "What Set Do You Want to Differentiate?\n\tSet A\n\tSet B", "Count", JOptionPane.PLAIN_MESSAGE).charAt(0);
-//                                                setA = JOptionPane.showInputDialog(null, "Enter First set - Set A\nDivide each element by comma","Set A", JOptionPane.PLAIN_MESSAGE);
-//                                                setB = JOptionPane.showInputDialog(null, "Enter Second set - Set B\nDivide each element by comma","Set B", JOptionPane.PLAIN_MESSAGE);
-//                                            }
-//                                            //operation.setMainDifference(setA, setB, setC, setD, setNum);
-//                                            JOptionPane.showMessageDialog(null, operation.getDifference(), "Difference", JOptionPane.PLAIN_MESSAGE);
-//                                            break;
                                         case '1':
                                         case '2':
                                             val = 2;
@@ -364,6 +338,24 @@ public class Main {
     public static void recursion(int wikiIndex) throws IOException{
         System.out.println("Recursion printing");
         Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
+        boolean status = true;
+        String menu;
+
+        menu = "What do you wish to Perform?\n\tI -- Information about Recursion\n\tX -- Factorial\n\tF -- Fibonacci Sequence\n\tG -- Go Back";
+
+        char menuOption;
+
+        do{
+            menuOption = JOptionPane.showInputDialog(null, menu, "Recursion Menu", JOptionPane.PLAIN_MESSAGE).charAt(0);
+            switch (menuOption){
+                case 'F':
+                case 'f':
+                    break;
+                case 'X':
+                case 'x':
+                    break;
+            }
+        }while(status);
     }
 
     public static void fibonacciSequence(int wikiIndex) throws IOException{

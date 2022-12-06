@@ -262,31 +262,12 @@ public class Set_Theory_Operation {
                     DifferenceSet.add(A[i]);
                 }
 
-//                for(int i = 0; i < A.length; i++){
-//                    for(int j = 0; j <B.length; j++){
-//                        for(int k = 0; k <C.length; k++){
-//                            if(!A[i].equals(B[j]) && !A[i].equals(C[k])){
-//                                DifferenceSet.add(A[i]);
-//                                break;
-//                            }
-//                        }
-//                    }
-//                }
                 DifferenceSet.removeAll(List.of(B));
                 DifferenceSet.removeAll(List.of(C));
                 break;
             case 'b':
             case 'B':
-//                for(int i = 0; i < B.length; i++){
-//                    for(int j = 0; j <A.length; j++){
-//                        for(int k = 0; k <C.length; k++){
-//                            if(!B[i].equals(A[j]) && !B[i].equals(C[k])){
-//                                DifferenceSet.add(B[i]);
-//                                break;
-//                            }
-//                        }
-//                    }
-//                }
+
                 for(int i = 0; i < B.length; i++){
                     DifferenceSet.add(B[i]);
                 }
@@ -300,35 +281,60 @@ public class Set_Theory_Operation {
                 for(int i = 0; i < C.length; i++){
                     DifferenceSet.add(C[i]);
                 }
-//                for(int i = 0; i < C.length; i++){
-//                    for(int j = 0; j <A.length; j++){
-//                        for(int k = 0; k <B.length; k++){
-//                            if(!C[i].equals(A[j]) && !C[i].equals(B[k])){
-//                                DifferenceSet.add(C[i]);
-//                                break;
-//                            }
-//                        }
-//                    }
-//                }
+
                 DifferenceSet.removeAll(List.of(A));
                 DifferenceSet.removeAll(List.of(B));
                 break;
         }
 
-
-//        for(int i = 0; i < A.length; i++){
-//            for(int j = 0; j <B.length; j++){
-//                for(int k = 0; k <C.length; k++){
-//                    if(!A[i].equals(B[j]) && (!A[i].equals(C[k]) && B[j].equals(C[k]))){
-//                        DifferenceSet.add(A[i]);
-//                        break;
-//                    }
-//                }
-//            }
-//        }
     }
     public void setDifference(String [] A, String [] B, String [] C, String [] D,char cDiff){
 
+        switch (cDiff){
+            case 'A':
+            case 'a':
+
+                for(int i = 0; i < A.length; i++){
+                    DifferenceSet.add(A[i]);
+                }
+
+                DifferenceSet.removeAll(List.of(B));
+                DifferenceSet.removeAll(List.of(C));
+                DifferenceSet.removeAll(List.of(D));
+                break;
+            case 'b':
+            case 'B':
+
+                for(int i = 0; i < B.length; i++){
+                    DifferenceSet.add(B[i]);
+                }
+
+                DifferenceSet.removeAll(List.of(A));
+                DifferenceSet.removeAll(List.of(C));
+                DifferenceSet.removeAll(List.of(D));
+                break;
+            case 'c':
+            case 'C':
+
+                for(int i = 0; i < C.length; i++){
+                    DifferenceSet.add(C[i]);
+                }
+
+                DifferenceSet.removeAll(List.of(A));
+                DifferenceSet.removeAll(List.of(B));
+                DifferenceSet.removeAll(List.of(D));
+                break;
+            case 'D':
+            case 'd':
+
+                for(int i = 0; i < D.length; i++){
+                    DifferenceSet.add(D[i]);
+                }
+                DifferenceSet.removeAll(List.of(A));
+                DifferenceSet.removeAll(List.of(B));
+                DifferenceSet.removeAll(List.of(C));
+                break;
+        }
     }
 
     public String getDifference(){
