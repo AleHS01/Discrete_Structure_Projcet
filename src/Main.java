@@ -151,7 +151,7 @@ public class Main {
 
         menu = "What do you wish to do?\n\tK -- Know more information about set\n\tO -- Perform and Operation\n\tG -- Go Back";
         operationMiniMenu = "What do you wish to perform?\n\tU -- Union of Sets\n\tI -- Intersection of Sets\n\tD -- Difference of Sets\n\tG -- Go Back";
-        typeOfOperation = "Make a Selection\n\tE - Enter sets\n\tG -- Go Back";
+        typeOfOperation = "How Many sets do you Want to Work With\n\t2 -- Two Sets\n\t3 -- Three Sets\n\t4 -- Four Set\n\tG -- Go Back";
 
         do{
             menuOption = JOptionPane.showInputDialog(null, menu, "Set Theory Menu", JOptionPane.PLAIN_MESSAGE).charAt(0);
@@ -243,32 +243,63 @@ public class Main {
                             case 'd':
                                 do{
                                     char typeChoice =JOptionPane.showInputDialog(null, typeOfOperation,"Menu", JOptionPane.PLAIN_MESSAGE).charAt(0);
+                                    operation = new Set_Theory_Operation();
+                                    char c;
+                                    int val;
                                     switch (typeChoice){
-                                        case 'E':
-                                        case 'e':
-                                            operation = new Set_Theory_Operation();
-                                            int setNum = Integer.parseInt(JOptionPane.showInputDialog(null, "How Many sets do You want? (Min 2 - Max 4)", "Count", JOptionPane.PLAIN_MESSAGE));
-                                            char c;
-                                            if(setNum == 3){
-                                                c = JOptionPane.showInputDialog(null, "What Set Do You Want to Differentiate?\n\tSet A\n\tSet B\n\tSet C", "Count", JOptionPane.PLAIN_MESSAGE).charAt(0);
-                                                setA = JOptionPane.showInputDialog(null, "Enter first set - Set A\nDivide each element by comma","Set A", JOptionPane.PLAIN_MESSAGE);
-                                                setB = JOptionPane.showInputDialog(null, "Enter first set - Set B\nDivide each element by comma","Set B", JOptionPane.PLAIN_MESSAGE);
-                                                setC = JOptionPane.showInputDialog(null, "Enter first set - Set C\nDivide each element by comma","Set C", JOptionPane.PLAIN_MESSAGE);
-                                            }
-                                            else if(setNum == 4){
-                                                c = JOptionPane.showInputDialog(null, "What Set Do You Want to Differentiate?\n\tSet A\n\tSet B\n\tSet C\n\tSet D", "Count", JOptionPane.PLAIN_MESSAGE).charAt(0);
-                                                setA = JOptionPane.showInputDialog(null, "Enter first set - Set A\nDivide each element by comma","Set A", JOptionPane.PLAIN_MESSAGE);
-                                                setB = JOptionPane.showInputDialog(null, "Enter first set - Set B\nDivide each element by comma","Set B", JOptionPane.PLAIN_MESSAGE);
-                                                setC = JOptionPane.showInputDialog(null, "Enter first set - Set C\nDivide each element by comma","Set C", JOptionPane.PLAIN_MESSAGE);
-                                                setD = JOptionPane.showInputDialog(null, "Enter first set - Set D\nDivide each element by comma","Set D", JOptionPane.PLAIN_MESSAGE);
-                                            }
-                                            else{
-                                                c = JOptionPane.showInputDialog(null, "What Set Do You Want to Differentiate?\n\tSet A\n\tSet B", "Count", JOptionPane.PLAIN_MESSAGE).charAt(0);
-                                                setA = JOptionPane.showInputDialog(null, "Enter first set - Set A\nDivide each element by comma","Set A", JOptionPane.PLAIN_MESSAGE);
-                                                setB = JOptionPane.showInputDialog(null, "Enter first set - Set B\nDivide each element by comma","Set B", JOptionPane.PLAIN_MESSAGE);
-                                            }
-                                            operation.setMainDifference(setA, setB, setC, setD, setNum);
-                                            JOptionPane.showMessageDialog(null, operation.getDifference(), "Intersection", JOptionPane.PLAIN_MESSAGE);
+//                                        case 'E':
+//                                        case 'e':
+//                                            //operation = new Set_Theory_Operation();
+//                                            //int setNum = Integer.parseInt(JOptionPane.showInputDialog(null, "How Many sets do You want? (Min 2 - Max 4)", "Count", JOptionPane.PLAIN_MESSAGE));
+//                                            //char c;
+//                                            if(setNum == 3){
+//                                                c = JOptionPane.showInputDialog(null, "What Set Do You Want to Differentiate?\n\tSet A\n\tSet B\n\tSet C", "Count", JOptionPane.PLAIN_MESSAGE).charAt(0);
+//                                                setA = JOptionPane.showInputDialog(null, "Enter First set - Set A\nDivide each element by comma","Set A", JOptionPane.PLAIN_MESSAGE);
+//                                                setB = JOptionPane.showInputDialog(null, "Enter Second set - Set B\nDivide each element by comma","Set B", JOptionPane.PLAIN_MESSAGE);
+//                                                setC = JOptionPane.showInputDialog(null, "Enter Third set - Set C\nDivide each element by comma","Set C", JOptionPane.PLAIN_MESSAGE);
+//                                            }
+//                                            else if(setNum == 4){
+//                                                c = JOptionPane.showInputDialog(null, "What Set Do You Want to Differentiate?\n\tSet A\n\tSet B\n\tSet C\n\tSet D", "Count", JOptionPane.PLAIN_MESSAGE).charAt(0);
+//                                                setA = JOptionPane.showInputDialog(null, "Enter First set - Set A\nDivide each element by comma","Set A", JOptionPane.PLAIN_MESSAGE);
+//                                                setB = JOptionPane.showInputDialog(null, "Enter Second set - Set B\nDivide each element by comma","Set B", JOptionPane.PLAIN_MESSAGE);
+//                                                setC = JOptionPane.showInputDialog(null, "Enter Third set - Set C\nDivide each element by comma","Set C", JOptionPane.PLAIN_MESSAGE);
+//                                                setD = JOptionPane.showInputDialog(null, "Enter Fourth set - Set D\nDivide each element by comma","Set D", JOptionPane.PLAIN_MESSAGE);
+//                                            }
+//                                            else{
+//                                                c = JOptionPane.showInputDialog(null, "What Set Do You Want to Differentiate?\n\tSet A\n\tSet B", "Count", JOptionPane.PLAIN_MESSAGE).charAt(0);
+//                                                setA = JOptionPane.showInputDialog(null, "Enter First set - Set A\nDivide each element by comma","Set A", JOptionPane.PLAIN_MESSAGE);
+//                                                setB = JOptionPane.showInputDialog(null, "Enter Second set - Set B\nDivide each element by comma","Set B", JOptionPane.PLAIN_MESSAGE);
+//                                            }
+//                                            //operation.setMainDifference(setA, setB, setC, setD, setNum);
+//                                            JOptionPane.showMessageDialog(null, operation.getDifference(), "Difference", JOptionPane.PLAIN_MESSAGE);
+//                                            break;
+                                        case '1':
+                                        case '2':
+                                            val = 2;
+                                            c = JOptionPane.showInputDialog(null, "What Set Do You Want to Differentiate?\n\tSet A\n\tSet B", "Count", JOptionPane.PLAIN_MESSAGE).charAt(0);
+                                            setA = JOptionPane.showInputDialog(null, "Enter First set - Set A\nDivide each element by comma","Set A", JOptionPane.PLAIN_MESSAGE);
+                                            setB = JOptionPane.showInputDialog(null, "Enter Second set - Set B\nDivide each element by comma","Set B", JOptionPane.PLAIN_MESSAGE);
+                                            operation.setMainDifference(setA, setB, setC, setD, val,typeChoice);
+                                            JOptionPane.showMessageDialog(null, operation.getDifference(), "Difference", JOptionPane.PLAIN_MESSAGE);
+                                            break;
+                                        case '3':
+                                            val = 3;
+                                            c = JOptionPane.showInputDialog(null, "What Set Do You Want to Differentiate?\n\tSet A\n\tSet B\n\tSet C", "Count", JOptionPane.PLAIN_MESSAGE).charAt(0);
+                                            setA = JOptionPane.showInputDialog(null, "Enter First set - Set A\nDivide each element by comma","Set A", JOptionPane.PLAIN_MESSAGE);
+                                            setB = JOptionPane.showInputDialog(null, "Enter Second set - Set B\nDivide each element by comma","Set B", JOptionPane.PLAIN_MESSAGE);
+                                            setC = JOptionPane.showInputDialog(null, "Enter Third set - Set C\nDivide each element by comma","Set C", JOptionPane.PLAIN_MESSAGE);
+                                            //operation.setMainDifference(setA, setB, setC, setD, val,typeChoice);
+                                            //JOptionPane.showMessageDialog(null, operation.getDifference(), "Difference", JOptionPane.PLAIN_MESSAGE);
+                                            break;
+                                        case '4':
+                                            val = 4;
+                                            c = JOptionPane.showInputDialog(null, "What Set Do You Want to Differentiate?\n\tSet A\n\tSet B\n\tSet C\n\tSet D", "Count", JOptionPane.PLAIN_MESSAGE).charAt(0);
+                                            setA = JOptionPane.showInputDialog(null, "Enter First set - Set A\nDivide each element by comma","Set A", JOptionPane.PLAIN_MESSAGE);
+                                            setB = JOptionPane.showInputDialog(null, "Enter Second set - Set B\nDivide each element by comma","Set B", JOptionPane.PLAIN_MESSAGE);
+                                            setC = JOptionPane.showInputDialog(null, "Enter Third set - Set C\nDivide each element by comma","Set C", JOptionPane.PLAIN_MESSAGE);
+                                            setD = JOptionPane.showInputDialog(null, "Enter Fourth set - Set D\nDivide each element by comma","Set D", JOptionPane.PLAIN_MESSAGE);
+                                            //operation.setMainDifference(setA, setB, setC, setD, val, typeChoice);
+                                            //JOptionPane.showMessageDialog(null, operation.getDifference(), "Difference", JOptionPane.PLAIN_MESSAGE);
                                             break;
                                         case 'G':
                                         case 'g':

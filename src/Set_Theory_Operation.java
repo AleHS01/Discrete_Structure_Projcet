@@ -195,7 +195,7 @@ public class Set_Theory_Operation {
     /*Methods: Difference of Set
     */
 
-    public void setMainDifference(String setA, String setB, String setC, String setD, int setNum){
+    public void setMainDifference(String setA, String setB, String setC, String setD, int setNum, char cDiff){
 
         letterSetA = setA.split(",");
         letterSetB =setB.split(",");
@@ -212,19 +212,38 @@ public class Set_Theory_Operation {
 
         }
         else{
-            setDifference(letterSetA, letterSetB);
+            setDifference(letterSetA, letterSetB,cDiff);
         }
     }
-    public void setDifference(String [] A, String [] B){
+    public void setDifference(String [] A, String [] B, char cDiff){
         //DifferenceSet
-        for(int i = 0; i < A.length; i++){
-            for(int j = 0; j <B.length; j++){
-                if(!A[i].equals(B[j])){
-                    DifferenceSet.add(A[i]);
+        //if(cDiff == 'A' || cDiff == 'a'){
+            for(int i = 0; i < A.length; i++){
+                for(int j = 0; j <B.length; j++){
+                    if(!A[i].equals(B[j])){
+                        DifferenceSet.add(A[i]);
+                    }
+//                    if(!DifferenceSet.isEmpty()){
+//                        if(DifferenceSet.contains(B[j])){
+//                            DifferenceSet.remove(i);
+//                        }
+//                    }
                 }
-            }
 
-        }
+            }
+        //}
+//        else{
+//            for(int i = 0; i < B.length; i++){
+//                for(int j = 0; j <A.length; j++){
+//                    if(!B[i].equals(A[j])){
+//                        DifferenceSet.add(B[i]);
+//                    }
+//                }
+//
+//            }
+//        }
+
+
     }
     public void setDifference(String [] A, String [] B, String [] C){
 //        for(int i = 0; i < A.length; i++){
