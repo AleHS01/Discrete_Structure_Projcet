@@ -149,7 +149,7 @@ public class Main {
         Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
         Set_Theory_Operation operation;
 
-        menu = "What do you wish to do?\n\tI -- Info: more information about set\n\tO -- Perform and Operation\n\tG -- Go Back";
+        menu = "What do you wish to do?\n\tI -- Information about Set Theory\n\tO -- Perform and Operation\n\tG -- Go Back";
         operationMiniMenu = "What do you wish to perform?\n\tU -- Union of Sets\n\tI -- Intersection of Sets\n\tD -- Difference of Sets\n\tG -- Go Back";
         typeOfOperation = "How Many sets do you Want to Work With\n\t2 -- Two Sets\n\t3 -- Three Sets\n\t4 -- Four Set\n\tG -- Go Back";
 
@@ -336,29 +336,47 @@ public class Main {
     }
 
     public static void recursion(int wikiIndex) throws IOException{
-        System.out.println("Recursion printing");
         Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
         boolean status = true;
         String menu;
-        menu = "What do you wish to Perform?\n\tI -- Information about Recursion\n\tX -- Factorial\n\tF -- Fibonacci Sequence\n\tG -- Go Back";
+        String station1 = "Tower #1";
+        String station2 = "Tower #2";
+        String station3 = "Tower #3";
+
+
+        menu = "What do you wish to Perform?\n\tI -- Information about Recursion\n\tF -- Fibonacci Sequence\n\tX -- Factorial\n\tT -- Tower Of Hanoi\n\tG -- Go Back";
 
         char menuOption;
 
         do{
             menuOption = JOptionPane.showInputDialog(null, menu, "Recursion Menu", JOptionPane.PLAIN_MESSAGE).charAt(0);
             switch (menuOption){
+                case 'I':
+                case 'i':
+                    JOptionPane.showMessageDialog(null, wiki.getWikiString(), "Recursion Info", JOptionPane.PLAIN_MESSAGE);
+                    break;
                 case 'F':
                 case 'f':
                     break;
                 case 'X':
                 case 'x':
                     long num = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter The Integer you wish to Get it Factorial\n(Use Number From 0 to 65, That's the maximum a variable can hold)" , "Factorial Calculator", JOptionPane.INFORMATION_MESSAGE));
-                    JOptionPane.showMessageDialog(null, "The Factorial of " + num+" is:\n\t" + Recursion_Operation.factorial(num), "Factorial Calculator", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "The Factorial of " + num +" is:\n\t" + Recursion_Operation.factorial(num), "Factorial Calculator", JOptionPane.INFORMATION_MESSAGE);
+                    break;
+                case 'T':
+                case 't':
+                    int disk = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter The Number of Disk Your Tower has?\n" , "Tower Of Hanoi", JOptionPane.INFORMATION_MESSAGE));
+                    Recursion_Operation.TowerOfHanoi(disk, station1, station2, station3);
+                    JOptionPane.showMessageDialog(null,Recursion_Operation.HanoiToString(), "Results", JOptionPane.PLAIN_MESSAGE );
                     break;
                 case 'G':
                 case 'g':
                     status = false;
                     break;
+                    default:
+                        JOptionPane.showMessageDialog(null, "Error: '" + menuOption + "' is an invalid selection - Try Again Please\n",
+                                "Recursion", JOptionPane.WARNING_MESSAGE);
+                        break;
             }
         }while(status);
     }
