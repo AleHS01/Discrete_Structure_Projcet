@@ -227,7 +227,15 @@ public class Set_Theory_Operation {
         }
     }
     public void setDifference(String [] A, String [] B, String [] C){
-
+//        for(int i = 0; i < A.length; i++){
+//            for(int j = 0; j <B.length; j++){
+//                for(int k = 0; k <C.length; k++){
+//                    if(!A[i].equals(B[j]) && (!A[i].equals(C[k]) && B[j].equals(C[k]))){
+//                        IntersectionSet.add(A[i]);
+//                    }
+//                }
+//            }
+//        }
     }
     public void setDifference(String [] A, String [] B, String [] C, String [] D){
 
@@ -235,19 +243,19 @@ public class Set_Theory_Operation {
 
     public String getDifference(){
         String str = "Differences: " + DifferenceSet.size() + " elements \n";
-//        int commaPosition;
-//        int index = 0;
-//
-//        while(index < DifferenceSet.size()){
-//            str = str + DifferenceSet.get(index);
-//            str = str + ", ";
-//            index++;
-//        }
-//
-//        commaPosition = str.lastIndexOf(',');
-//        char [] c = str.toCharArray();
-//        c[commaPosition] = ' ';
-//        str = String.valueOf(c);
+        int commaPosition;
+        int index = 0;
+
+        while(index < DifferenceSet.size()){
+            str = str + DifferenceSet.get(index);
+            str = str + ", ";
+            index++;
+        }
+
+        commaPosition = str.lastIndexOf(',');
+        char [] c = str.toCharArray();
+        c[commaPosition] = ' ';
+        str = String.valueOf(c);
         return str;
     }
 }
