@@ -340,7 +340,6 @@ public class Main {
         Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
         boolean status = true;
         String menu;
-
         menu = "What do you wish to Perform?\n\tI -- Information about Recursion\n\tX -- Factorial\n\tF -- Fibonacci Sequence\n\tG -- Go Back";
 
         char menuOption;
@@ -353,6 +352,12 @@ public class Main {
                     break;
                 case 'X':
                 case 'x':
+                    long num = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter The Integer you wish to Get it Factorial\n(Use Number From 0 to 65, That's the maximum a variable can hold)" , "Factorial Calculator", JOptionPane.INFORMATION_MESSAGE));
+                    JOptionPane.showMessageDialog(null, "The Factorial of " + num+" is:\n\t" + Recursion_Operation.factorial(num), "Factorial Calculator", JOptionPane.INFORMATION_MESSAGE);
+                    break;
+                case 'G':
+                case 'g':
+                    status = false;
                     break;
             }
         }while(status);
