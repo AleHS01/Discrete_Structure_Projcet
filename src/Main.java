@@ -279,7 +279,7 @@ public class Main {
                                             c = JOptionPane.showInputDialog(null, "What Set Do You Want to Differentiate?\n\tSet A\n\tSet B", "Count", JOptionPane.PLAIN_MESSAGE).charAt(0);
                                             setA = JOptionPane.showInputDialog(null, "Enter First set - Set A\nDivide each element by comma","Set A", JOptionPane.PLAIN_MESSAGE);
                                             setB = JOptionPane.showInputDialog(null, "Enter Second set - Set B\nDivide each element by comma","Set B", JOptionPane.PLAIN_MESSAGE);
-                                            operation.setMainDifference(setA, setB, setC, setD, val,typeChoice);
+                                            operation.setMainDifference(setA, setB, setC, setD, val,c);
                                             JOptionPane.showMessageDialog(null, operation.getDifference(), "Difference", JOptionPane.PLAIN_MESSAGE);
                                             break;
                                         case '3':
@@ -288,8 +288,8 @@ public class Main {
                                             setA = JOptionPane.showInputDialog(null, "Enter First set - Set A\nDivide each element by comma","Set A", JOptionPane.PLAIN_MESSAGE);
                                             setB = JOptionPane.showInputDialog(null, "Enter Second set - Set B\nDivide each element by comma","Set B", JOptionPane.PLAIN_MESSAGE);
                                             setC = JOptionPane.showInputDialog(null, "Enter Third set - Set C\nDivide each element by comma","Set C", JOptionPane.PLAIN_MESSAGE);
-                                            //operation.setMainDifference(setA, setB, setC, setD, val,typeChoice);
-                                            //JOptionPane.showMessageDialog(null, operation.getDifference(), "Difference", JOptionPane.PLAIN_MESSAGE);
+                                            operation.setMainDifference(setA, setB, setC, setD, val,c);
+                                            JOptionPane.showMessageDialog(null, operation.getDifference(), "Difference", JOptionPane.PLAIN_MESSAGE);
                                             break;
                                         case '4':
                                             val = 4;
@@ -298,8 +298,8 @@ public class Main {
                                             setB = JOptionPane.showInputDialog(null, "Enter Second set - Set B\nDivide each element by comma","Set B", JOptionPane.PLAIN_MESSAGE);
                                             setC = JOptionPane.showInputDialog(null, "Enter Third set - Set C\nDivide each element by comma","Set C", JOptionPane.PLAIN_MESSAGE);
                                             setD = JOptionPane.showInputDialog(null, "Enter Fourth set - Set D\nDivide each element by comma","Set D", JOptionPane.PLAIN_MESSAGE);
-                                            //operation.setMainDifference(setA, setB, setC, setD, val, typeChoice);
-                                            //JOptionPane.showMessageDialog(null, operation.getDifference(), "Difference", JOptionPane.PLAIN_MESSAGE);
+                                            operation.setMainDifference(setA, setB, setC, setD, val, c);
+                                            JOptionPane.showMessageDialog(null, operation.getDifference(), "Difference", JOptionPane.PLAIN_MESSAGE);
                                             break;
                                         case 'G':
                                         case 'g':

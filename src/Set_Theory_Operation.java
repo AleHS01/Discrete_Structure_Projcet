@@ -1,6 +1,7 @@
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Set_Theory_Operation {
 
@@ -203,12 +204,12 @@ public class Set_Theory_Operation {
         if(setNum == 3){
 
             letterSetC = setC.split(",");
-            setDifference(letterSetA, letterSetB, letterSetC);
+            setDifference(letterSetA, letterSetB, letterSetC,cDiff);
         }
         else if(setNum == 4){
             letterSetC = setC.split(",");
             letterSetD =setD.split(",");
-            setDifference(letterSetA, letterSetB, letterSetC,letterSetD);
+            setDifference(letterSetA, letterSetB, letterSetC,letterSetD,cDiff);
 
         }
         else{
@@ -217,46 +218,116 @@ public class Set_Theory_Operation {
     }
     public void setDifference(String [] A, String [] B, char cDiff){
         //DifferenceSet
-        //if(cDiff == 'A' || cDiff == 'a'){
-            for(int i = 0; i < A.length; i++){
-                for(int j = 0; j <B.length; j++){
-                    if(!A[i].equals(B[j])){
-                        DifferenceSet.add(A[i]);
-                    }
-//                    if(!DifferenceSet.isEmpty()){
-//                        if(DifferenceSet.contains(B[j])){
-//                            DifferenceSet.remove(i);
-//                        }
-//                    }
-                }
+        if(cDiff == 'A' || cDiff == 'a'){
 
+            for(int i = 0; i < A.length; i++){
+                DifferenceSet.add(A[i]);
             }
-        //}
-//        else{
+//            for(int i = 0; i < A.length; i++){
+//                for(int j = 0; j <B.length; j++){
+//                    if(!A[i].equals(B[j])){
+//                        DifferenceSet.add(A[i]);
+//                        break;
+//                    }
+//                }
+//            }
+        DifferenceSet.removeAll(List.of(B));
+        }
+        else{
+
+            for(int i = 0; i < B.length; i++){
+                DifferenceSet.add(B[i]);
+            }
 //            for(int i = 0; i < B.length; i++){
 //                for(int j = 0; j <A.length; j++){
 //                    if(!B[i].equals(A[j])){
 //                        DifferenceSet.add(B[i]);
+//                        break;
 //                    }
 //                }
 //
 //            }
-//        }
+            DifferenceSet.removeAll(List.of(A));
+        }
 
 
     }
-    public void setDifference(String [] A, String [] B, String [] C){
+    public void setDifference(String [] A, String [] B, String [] C,char cDiff){
+
+        switch (cDiff){
+            case 'A':
+            case 'a':
+
+                for(int i = 0; i < A.length; i++){
+                    DifferenceSet.add(A[i]);
+                }
+
+//                for(int i = 0; i < A.length; i++){
+//                    for(int j = 0; j <B.length; j++){
+//                        for(int k = 0; k <C.length; k++){
+//                            if(!A[i].equals(B[j]) && !A[i].equals(C[k])){
+//                                DifferenceSet.add(A[i]);
+//                                break;
+//                            }
+//                        }
+//                    }
+//                }
+                DifferenceSet.removeAll(List.of(B));
+                DifferenceSet.removeAll(List.of(C));
+                break;
+            case 'b':
+            case 'B':
+//                for(int i = 0; i < B.length; i++){
+//                    for(int j = 0; j <A.length; j++){
+//                        for(int k = 0; k <C.length; k++){
+//                            if(!B[i].equals(A[j]) && !B[i].equals(C[k])){
+//                                DifferenceSet.add(B[i]);
+//                                break;
+//                            }
+//                        }
+//                    }
+//                }
+                for(int i = 0; i < B.length; i++){
+                    DifferenceSet.add(B[i]);
+                }
+
+                DifferenceSet.removeAll(List.of(A));
+                DifferenceSet.removeAll(List.of(C));
+                break;
+            case 'c':
+            case 'C':
+
+                for(int i = 0; i < C.length; i++){
+                    DifferenceSet.add(C[i]);
+                }
+//                for(int i = 0; i < C.length; i++){
+//                    for(int j = 0; j <A.length; j++){
+//                        for(int k = 0; k <B.length; k++){
+//                            if(!C[i].equals(A[j]) && !C[i].equals(B[k])){
+//                                DifferenceSet.add(C[i]);
+//                                break;
+//                            }
+//                        }
+//                    }
+//                }
+                DifferenceSet.removeAll(List.of(A));
+                DifferenceSet.removeAll(List.of(B));
+                break;
+        }
+
+
 //        for(int i = 0; i < A.length; i++){
 //            for(int j = 0; j <B.length; j++){
 //                for(int k = 0; k <C.length; k++){
 //                    if(!A[i].equals(B[j]) && (!A[i].equals(C[k]) && B[j].equals(C[k]))){
-//                        IntersectionSet.add(A[i]);
+//                        DifferenceSet.add(A[i]);
+//                        break;
 //                    }
 //                }
 //            }
 //        }
     }
-    public void setDifference(String [] A, String [] B, String [] C, String [] D){
+    public void setDifference(String [] A, String [] B, String [] C, String [] D,char cDiff){
 
     }
 
