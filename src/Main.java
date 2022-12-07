@@ -344,7 +344,8 @@ public class Main {
         String temp = "Tower #2";
 
 
-        menu = "What do you wish to Perform?\n\tI -- Information about Recursion\n\tF -- Fibonacci Sequence\n\tX -- Factorial\n\tT -- Tower Of Hanoi\n\tG -- Go Back";
+        menu = "What do you wish to Perform?\n\tI -- Information about Recursion\n\tF -- Fibonacci Sequence\n\tX -- Factorial" +
+                "\n\tT -- Tower Of Hanoi\n\tC -- Greatest Common Divisor\n\tG -- Go Back";
 
         char menuOption;
 
@@ -366,9 +367,15 @@ public class Main {
                 case 'T':
                 case 't':
                     int disk = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter The Number of Disk Your Tower has?\n" , "Tower Of Hanoi", JOptionPane.INFORMATION_MESSAGE));
-                    Recursion_Operation.InitDisk(disk);
                     Recursion_Operation.TowerOfHanoi(disk, current, destiny, temp);
                     JOptionPane.showMessageDialog(null,Recursion_Operation.HanoiToString(), "Results", JOptionPane.PLAIN_MESSAGE );
+                    break;
+                case 'c':
+                case 'C':
+                    String str = JOptionPane.showInputDialog(null, "Enter as Many integer as you like (Split every number with a comma ',')", "Greatest Common Divisor", JOptionPane.PLAIN_MESSAGE);
+                    int [] arr = Recursion_Operation.convertToArr(str);
+                    String str2 = "The Greatest Common Divisor of: " + str + "\n\nGCD:  " + Recursion_Operation.getGCD(arr, 0);
+                    JOptionPane.showMessageDialog(null, str2, "Results Of Greatest Common Divisor", JOptionPane.PLAIN_MESSAGE);
                     break;
                 case 'G':
                 case 'g':

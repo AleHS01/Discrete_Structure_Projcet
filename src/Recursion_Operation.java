@@ -1,7 +1,8 @@
+import java.util.ArrayList;
 public class Recursion_Operation {
 
     private static String hanoiStr = "Results:\n";
-
+    //private  static int [] gcdArr;
     public static long factorial(long num){
         //When it gets to the end then multiply by 1
         if(num == 0)
@@ -29,10 +30,46 @@ public class Recursion_Operation {
 
         }
     }
-
     public static String HanoiToString(){
         return hanoiStr;
     }
+
+    /*Find GCD of Multiple Numbers*/
+
+    public static int [] convertToArr(String str){
+
+        String [] strArr = str.split(",");
+        int [] gcdArr = new int [strArr.length];
+        for(int i = 0; i < strArr.length; i++){
+            gcdArr[i] = Integer.parseInt(strArr[i]);
+        }
+        //gcdArr = String.valueOf(str.split(","));
+        return gcdArr;
+    }
+
+    public static int gcd(int a, int b){
+        if(b == 0){
+            return a;
+        }
+        else{
+            return gcd(b, a % b);
+        }
+    }
+
+    public static int getGCD(int [] intArray, int i){
+        int a, b;
+
+        if(i == intArray.length - 1){
+            return intArray[i];
+        }
+        else{
+            a = intArray[i];
+            b = getGCD(intArray, i + 1);
+            return gcd(a,b);
+        }
+
+    }
+
 
     //Try Bigger Integer Class -- Need To investigate
 
