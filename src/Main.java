@@ -210,22 +210,6 @@ public class Main {
                                             operation.setMainUnion(setA, setB, setC, setD, setNum);
                                             JOptionPane.showMessageDialog(null, operation.getUnion(), "Union", JOptionPane.PLAIN_MESSAGE);
                                             break;
-//                                        case 'E':
-//                                        case 'e':
-//
-//                                            operation = new Set_Theory_Operation();
-//                                            //int setNum = Integer.parseInt(JOptionPane.showInputDialog(null, "How Many sets do You want? (Min 2 - Max 4)", "Count", JOptionPane.PLAIN_MESSAGE));
-//                                            setA = JOptionPane.showInputDialog(null, "Enter first set - Set A\nDivide each element by comma","Set A", JOptionPane.PLAIN_MESSAGE);
-//                                            setB = JOptionPane.showInputDialog(null, "Enter first set - Set B\nDivide each element by comma","Set B", JOptionPane.PLAIN_MESSAGE);
-//                                            if(setNum == 3)
-//                                                setC = JOptionPane.showInputDialog(null, "Enter first set - Set C\nDivide each element by comma","Set C", JOptionPane.PLAIN_MESSAGE);
-//                                            else if(setNum == 4){
-//                                                setC = JOptionPane.showInputDialog(null, "Enter first set - Set C\nDivide each element by comma","Set C", JOptionPane.PLAIN_MESSAGE);
-//                                                setD = JOptionPane.showInputDialog(null, "Enter first set - Set D\nDivide each element by comma","Set D", JOptionPane.PLAIN_MESSAGE);
-//                                            }
-//                                            operation.setMainUnion(setA, setB, setC, setD, setNum);
-//                                            JOptionPane.showMessageDialog(null, operation.getUnion(), "Union", JOptionPane.PLAIN_MESSAGE);
-//                                            break;
                                         case 'G':
                                         case 'g':
                                             thirdBoolean = false;
@@ -271,21 +255,6 @@ public class Main {
                                             operation.setMainIntersection(setA, setB, setC, setD, setNum);
                                             JOptionPane.showMessageDialog(null, operation.getIntersection(), "Intersection", JOptionPane.PLAIN_MESSAGE);
                                             break;
-//                                        case 'E':
-//                                        case 'e':
-//                                            operation = new Set_Theory_Operation();
-//                                            //int setNum = Integer.parseInt(JOptionPane.showInputDialog(null, "How Many sets do You want? (Min 2 - Max 4)", "Count", JOptionPane.PLAIN_MESSAGE));
-////                                            setA = JOptionPane.showInputDialog(null, "Enter first set - Set A\nDivide each element by comma","Set A", JOptionPane.PLAIN_MESSAGE);
-////                                            setB = JOptionPane.showInputDialog(null, "Enter first set - Set B\nDivide each element by comma","Set B", JOptionPane.PLAIN_MESSAGE);
-//                                            //if(setNum == 3)
-////                                                setC = JOptionPane.showInputDialog(null, "Enter first set - Set C\nDivide each element by comma","Set C", JOptionPane.PLAIN_MESSAGE);
-//                                            else if(setNum == 4){
-//                                                setC = JOptionPane.showInputDialog(null, "Enter first set - Set C\nDivide each element by comma","Set C", JOptionPane.PLAIN_MESSAGE);
-//                                                setD = JOptionPane.showInputDialog(null, "Enter first set - Set D\nDivide each element by comma","Set D", JOptionPane.PLAIN_MESSAGE);
-//                                            }
-//                                            operation.setMainIntersection(setA, setB, setC, setD, setNum);
-//                                            JOptionPane.showMessageDialog(null, operation.getIntersection(), "Intersection", JOptionPane.PLAIN_MESSAGE);
-//                                            break;
                                         case 'G':
                                         case 'g':
                                             thirdBoolean = false;
@@ -403,12 +372,14 @@ public class Main {
 
 
         menu = "What do you wish to Perform?\n\tI -- Information about Recursion\n\tF -- Fibonacci Sequence\n\tX -- Factorial" +
-                "\n\tT -- Tower Of Hanoi\n\tC -- Greatest Common Divisor\n\tG -- Go Back";
+                "\n\tT -- Tower Of Hanoi\n\tC -- Greatest Common Divisor\n\tL -- Least Common Multiple\n\tG -- Go Back";
 
         char menuOption;
 
         do{
             menuOption = JOptionPane.showInputDialog(null, menu, "Recursion Menu", JOptionPane.PLAIN_MESSAGE).charAt(0);
+            String str, str2;
+            int [] arr;
             switch (menuOption){
                 case 'I':
                 case 'i':
@@ -431,10 +402,17 @@ public class Main {
                     break;
                 case 'c':
                 case 'C':
-                    String str = JOptionPane.showInputDialog(null, "Enter as Many integer as you like (Split every number with a comma ',')", "Greatest Common Divisor", JOptionPane.PLAIN_MESSAGE);
-                    int [] arr = Recursion_Operation.convertToArr(str);
-                    String str2 = "The Greatest Common Divisor of: " + str + "\n\nGCD:  " + Recursion_Operation.getGCD(arr, 0);
+                    str = JOptionPane.showInputDialog(null, "Enter as Many integer as you like (Split every number with a comma ',')", "Greatest Common Divisor", JOptionPane.PLAIN_MESSAGE);
+                    arr = Recursion_Operation.convertToArr(str);
+                    str2 = "The Greatest Common Divisor of: " + str + "\n\nGCD:  " + Recursion_Operation.getGCD(arr, 0);
                     JOptionPane.showMessageDialog(null, str2, "Results Of Greatest Common Divisor", JOptionPane.PLAIN_MESSAGE);
+                    break;
+                case 'L':
+                case 'l':
+                    str = JOptionPane.showInputDialog(null, "Enter as Many integer as you like (Split every number with a comma ',')", "Greatest Common Divisor", JOptionPane.PLAIN_MESSAGE);
+                    arr = Recursion_Operation.convertToArr(str);
+                    str2 = "The Least Common Multiple of: " + str + "\n\nLCM:  " + Recursion_Operation.getLCM(arr, 0);
+                    JOptionPane.showMessageDialog(null, str2, "Results Of Least Common Multiple", JOptionPane.PLAIN_MESSAGE);
                     break;
                 case 'G':
                 case 'g':

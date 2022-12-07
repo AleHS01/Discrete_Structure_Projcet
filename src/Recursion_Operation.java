@@ -73,7 +73,28 @@ public class Recursion_Operation {
 
     }
 
+    /*Methods for LCM*/
 
-    //Try Bigger Integer Class -- Need To investigate
+    public static int gcdForLCM(int a, int b)
+    {
+        if (a == 0)
+            return b;
+        return gcdForLCM(b % a, a);
+    }
+
+    // method to return LCM of two numbers
+    public static int getLCM(int [] arr, int i)
+    {
+        int a,b;
+        if(i == arr.length - 1){
+            return arr[i];
+        }
+        else{
+            a = getLCM(arr, i +1);
+            b = arr[i];
+            return (a / gcdForLCM(a, b)) * b;
+        }
+//        return (a / gcd(a, b)) * b;
+    }
 
 }

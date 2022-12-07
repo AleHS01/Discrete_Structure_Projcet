@@ -55,11 +55,15 @@ public class Set_Theory_Operation {
             }
     }
     public void setUnion(String [] A, String [] B){
+
+//        UnionSet.addAll(List.of(A));
+//        UnionSet.addAll(List.of(B));
+
         for(int i = 0; i < A.length; i++){
             UnionSet.add(A[i]);
         }
         for(int i = 0; i < B.length; i++){
-            if(B[i] != null)
+            if(!UnionSet.contains(B[i]))
                 UnionSet.add(B[i]);
         }
     }
@@ -69,11 +73,11 @@ public class Set_Theory_Operation {
             UnionSet.add(A[i]);
         }
         for(int i = 0; i < B.length; i++){
-            if(B[i] != null)
+            if(!UnionSet.contains(B[i]))
                 UnionSet.add(B[i]);
         }
         for(int i = 0; i < C.length; i++){
-            if(C[i] != null)
+            if(!UnionSet.contains(C[i]))
                 UnionSet.add(C[i]);
         }
     }
@@ -82,15 +86,15 @@ public class Set_Theory_Operation {
             UnionSet.add(A[i]);
         }
         for(int i = 0; i < B.length; i++){
-            if(B[i] != null)
+            if(!UnionSet.contains(B[i]))
                 UnionSet.add(B[i]);
         }
         for(int i = 0; i < C.length; i++){
-            if(C[i] != null)
+            if(!UnionSet.contains(C[i]))
                 UnionSet.add(C[i]);
         }
         for(int i = 0; i < D.length; i++){
-            if(D[i] != null)
+            if(!UnionSet.contains(D[i]))
                 UnionSet.add(D[i]);
         }
     }
