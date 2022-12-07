@@ -15,16 +15,18 @@ public class Recursion_Operation {
         * */
     }
 
-    public static void TowerOfHanoi(int disk, String station1, String station2, String station3){
+    public static void TowerOfHanoi(int disk, String currentPos, String destiny, String temp){
 
+        //Station 1 = Current position of the disk
+        //Station 2 = Where we want the disk to be
+        //Station 3 = Temporary position
+
+        //initialDisk
         if(disk > 0){
-            TowerOfHanoi(disk -1, station1, station3, station2);
-            hanoiStr = hanoiStr + "\tYou have to move disk from: " + station1 + " to " + station2 + "\n";
-            TowerOfHanoi(disk -1, station3, station2, station1);
-            //            TowerOfHanoi(disk -1, station1, station2, station3);
-            //TowerOfHanoi(disk -1, station2, station3, station1);
-            //TowerOfHanoi(disk -1, station2, station1, station3);
-            //TowerOfHanoi(disk -1, station2, station1, station3);
+            TowerOfHanoi(disk -1, currentPos, temp, destiny);
+            hanoiStr = hanoiStr + "  -You have to move disk " + disk +  " from: " + currentPos + " to " + destiny + "\n";
+            TowerOfHanoi(disk -1, temp, destiny, currentPos);
+
         }
     }
 

@@ -339,9 +339,9 @@ public class Main {
         Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
         boolean status = true;
         String menu;
-        String station1 = "Tower #1";
-        String station2 = "Tower #2";
-        String station3 = "Tower #3";
+        String current = "Tower #1";
+        String destiny = "Tower #3";
+        String temp = "Tower #2";
 
 
         menu = "What do you wish to Perform?\n\tI -- Information about Recursion\n\tF -- Fibonacci Sequence\n\tX -- Factorial\n\tT -- Tower Of Hanoi\n\tG -- Go Back";
@@ -366,7 +366,8 @@ public class Main {
                 case 'T':
                 case 't':
                     int disk = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter The Number of Disk Your Tower has?\n" , "Tower Of Hanoi", JOptionPane.INFORMATION_MESSAGE));
-                    Recursion_Operation.TowerOfHanoi(disk, station1, station2, station3);
+                    Recursion_Operation.InitDisk(disk);
+                    Recursion_Operation.TowerOfHanoi(disk, current, destiny, temp);
                     JOptionPane.showMessageDialog(null,Recursion_Operation.HanoiToString(), "Results", JOptionPane.PLAIN_MESSAGE );
                     break;
                 case 'G':
