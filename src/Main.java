@@ -212,22 +212,48 @@ public class Main {
                             case 'i':
                                 do{
                                     char typeChoice =JOptionPane.showInputDialog(null, typeOfOperation,"Menu", JOptionPane.PLAIN_MESSAGE).charAt(0);
+                                    int setNum;
                                     switch (typeChoice){
-                                        case 'E':
-                                        case 'e':
+                                        case '1':
+                                        case '2':
                                             operation = new Set_Theory_Operation();
-                                            int setNum = Integer.parseInt(JOptionPane.showInputDialog(null, "How Many sets do You want? (Min 2 - Max 4)", "Count", JOptionPane.PLAIN_MESSAGE));
-                                            setA = JOptionPane.showInputDialog(null, "Enter first set - Set A\nDivide each element by comma","Set A", JOptionPane.PLAIN_MESSAGE);
-                                            setB = JOptionPane.showInputDialog(null, "Enter first set - Set B\nDivide each element by comma","Set B", JOptionPane.PLAIN_MESSAGE);
-                                            if(setNum == 3)
-                                                setC = JOptionPane.showInputDialog(null, "Enter first set - Set C\nDivide each element by comma","Set C", JOptionPane.PLAIN_MESSAGE);
-                                            else if(setNum == 4){
-                                                setC = JOptionPane.showInputDialog(null, "Enter first set - Set C\nDivide each element by comma","Set C", JOptionPane.PLAIN_MESSAGE);
-                                                setD = JOptionPane.showInputDialog(null, "Enter first set - Set D\nDivide each element by comma","Set D", JOptionPane.PLAIN_MESSAGE);
-                                            }
+                                            setNum = 2;
+                                            setA = JOptionPane.showInputDialog(null, "Enter First set - Set A\nDivide each element by comma","Set A", JOptionPane.PLAIN_MESSAGE);
+                                            setB = JOptionPane.showInputDialog(null, "Enter Second set - Set B\nDivide each element by comma","Set B", JOptionPane.PLAIN_MESSAGE);
                                             operation.setMainIntersection(setA, setB, setC, setD, setNum);
-                                            JOptionPane.showMessageDialog(null, operation.getIntersection(), "Intersection", JOptionPane.PLAIN_MESSAGE);
                                             break;
+                                        case '3':
+                                            operation = new Set_Theory_Operation();
+                                            setNum = 3;
+                                            setA = JOptionPane.showInputDialog(null, "Enter First set - Set A\nDivide each element by comma","Set A", JOptionPane.PLAIN_MESSAGE);
+                                            setB = JOptionPane.showInputDialog(null, "Enter Second set - Set B\nDivide each element by comma","Set B", JOptionPane.PLAIN_MESSAGE);
+                                            setC = JOptionPane.showInputDialog(null, "Enter first set - Set C\nDivide each element by comma","Set C", JOptionPane.PLAIN_MESSAGE);
+                                            operation.setMainIntersection(setA, setB, setC, setD, setNum);
+                                            break;
+                                        case '4':
+                                            operation = new Set_Theory_Operation();
+                                            setNum = 4;
+                                            setA = JOptionPane.showInputDialog(null, "Enter First set - Set A\nDivide each element by comma","Set A", JOptionPane.PLAIN_MESSAGE);
+                                            setB = JOptionPane.showInputDialog(null, "Enter Second set - Set B\nDivide each element by comma","Set B", JOptionPane.PLAIN_MESSAGE);
+                                            setC = JOptionPane.showInputDialog(null, "Enter first set - Set C\nDivide each element by comma","Set C", JOptionPane.PLAIN_MESSAGE);
+                                            setD = JOptionPane.showInputDialog(null, "Enter first set - Set D\nDivide each element by comma","Set D", JOptionPane.PLAIN_MESSAGE);
+                                            operation.setMainIntersection(setA, setB, setC, setD, setNum);
+                                            break;
+//                                        case 'E':
+//                                        case 'e':
+//                                            operation = new Set_Theory_Operation();
+//                                            //int setNum = Integer.parseInt(JOptionPane.showInputDialog(null, "How Many sets do You want? (Min 2 - Max 4)", "Count", JOptionPane.PLAIN_MESSAGE));
+////                                            setA = JOptionPane.showInputDialog(null, "Enter first set - Set A\nDivide each element by comma","Set A", JOptionPane.PLAIN_MESSAGE);
+////                                            setB = JOptionPane.showInputDialog(null, "Enter first set - Set B\nDivide each element by comma","Set B", JOptionPane.PLAIN_MESSAGE);
+//                                            //if(setNum == 3)
+////                                                setC = JOptionPane.showInputDialog(null, "Enter first set - Set C\nDivide each element by comma","Set C", JOptionPane.PLAIN_MESSAGE);
+//                                            else if(setNum == 4){
+//                                                setC = JOptionPane.showInputDialog(null, "Enter first set - Set C\nDivide each element by comma","Set C", JOptionPane.PLAIN_MESSAGE);
+//                                                setD = JOptionPane.showInputDialog(null, "Enter first set - Set D\nDivide each element by comma","Set D", JOptionPane.PLAIN_MESSAGE);
+//                                            }
+//                                            operation.setMainIntersection(setA, setB, setC, setD, setNum);
+//                                            JOptionPane.showMessageDialog(null, operation.getIntersection(), "Intersection", JOptionPane.PLAIN_MESSAGE);
+//                                            break;
                                         case 'G':
                                         case 'g':
                                             thirdBoolean = false;
@@ -369,6 +395,7 @@ public class Main {
                     int disk = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter The Number of Disk Your Tower has?\n" , "Tower Of Hanoi", JOptionPane.INFORMATION_MESSAGE));
                     Recursion_Operation.TowerOfHanoi(disk, current, destiny, temp);
                     JOptionPane.showMessageDialog(null,Recursion_Operation.HanoiToString(), "Results", JOptionPane.PLAIN_MESSAGE );
+                    Recursion_Operation.clearHanoiString();
                     break;
                 case 'c':
                 case 'C':

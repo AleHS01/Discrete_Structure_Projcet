@@ -33,6 +33,9 @@ public class Recursion_Operation {
     public static String HanoiToString(){
         return hanoiStr;
     }
+    public static void clearHanoiString(){
+        hanoiStr = "Results:\n";
+    }
 
     /*Find GCD of Multiple Numbers*/
 
