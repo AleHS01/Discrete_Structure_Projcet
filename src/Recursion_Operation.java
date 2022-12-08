@@ -94,7 +94,7 @@ public class Recursion_Operation {
             b = arr[i];
             return (a / gcdForLCM(a, b)) * b;
         }
-//        return (a / gcd(a, b)) * b;
     }
+
 
 }
