@@ -360,6 +360,30 @@ public class Main {
     public static void induction(int wikiIndex) throws IOException{
         System.out.println("Induction Printing");
         Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
+        //Pascal_Triangle_Operation
+        String str = "Please Enter the number of line you want the Pascal Triangle to have:";
+        boolean control = true;
+        char c = JOptionPane.showInputDialog(null, str + "\n G --  Go back").charAt(0);
+
+        do{
+            switch (c){
+                case 'G':
+                case 'g':
+                control = false;
+                break;
+                default:
+                    if(Character.isDigit(c)){
+                        int n = Integer.parseInt(Character.toString(c));
+                        String trig = Pascal_Triangle_Operation.pascalTriangle(n);
+                        JOptionPane.showMessageDialog(null, trig, "Pascal Triangle", JOptionPane.PLAIN_MESSAGE);
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(null, "Invalid Format, Make sure is and integer -- Try again");
+                    }
+                    break;
+            }
+        } while(control);
+
     }
 
     public static void recursion(int wikiIndex) throws IOException{
