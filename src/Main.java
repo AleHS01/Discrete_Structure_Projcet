@@ -353,24 +353,22 @@ public class Main {
     }
 
     public static void pascalTriangle(int wikiIndex) throws IOException{
-        System.out.println("Pascal Triangle printing");
         Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
-    }
 
-    public static void induction(int wikiIndex) throws IOException{
-        System.out.println("Induction Printing");
-        Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
-        //Pascal_Triangle_Operation
         String str = "Please Enter the number of line you want the Pascal Triangle to have:";
         boolean control = true;
-        char c = JOptionPane.showInputDialog(null, str + "\n G --  Go back").charAt(0);
 
         do{
+            char c = JOptionPane.showInputDialog(null, "I -- Information about Pascal Triangle\nG --  Go back\n  OR Continue:\n" + str).charAt(0);
             switch (c){
                 case 'G':
                 case 'g':
-                control = false;
-                break;
+                    control = false;
+                    break;
+                case 'i':
+                case 'I':
+                    JOptionPane.showMessageDialog(null, wiki.getWikiString(), "Pascal Triangle Info", JOptionPane.PLAIN_MESSAGE);
+                    break;
                 default:
                     if(Character.isDigit(c)){
                         int n = Integer.parseInt(Character.toString(c));
@@ -383,7 +381,11 @@ public class Main {
                     break;
             }
         } while(control);
+    }
 
+    public static void induction(int wikiIndex) throws IOException{
+        System.out.println("induction");
+        Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
     }
 
     public static void recursion(int wikiIndex) throws IOException{
