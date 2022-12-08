@@ -455,6 +455,31 @@ public class Main {
     public static void fibonacciSequence(int wikiIndex) throws IOException{
         System.out.println("Fibonacci printing");
         Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
+
+        boolean control = true;
+
+        do{
+            char c = JOptionPane.showInputDialog(null, "I -- Information about Fibonacci Sequence\nG -- Go back\nEnter how many Fibonacci Numbers you wish to generate", "Fibonacci Sequence", JOptionPane.PLAIN_MESSAGE).charAt(0);
+            switch (c){
+                case 'I':
+                case 'i':
+                    break;
+                case 'G':
+                case 'g':
+                    control = false;
+                    break;
+                default:
+                    if(Character.isDigit(c)){
+                        int n = Integer.parseInt(Character.toString(c));
+                        String fiboStr = Fibonacci_Sequence_Operation.Fibonacci(n);
+                        JOptionPane.showMessageDialog(null, fiboStr, "Fibonacci Sequence", JOptionPane.PLAIN_MESSAGE);
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(null, "Invalid Format, Make sure is and integer -- Try again");
+                    }
+                    break;
+            }
+        }while (control);
     }
     public static void numberTheory(int wikiIndex) throws IOException{
         System.out.println("Number Theory");
