@@ -459,24 +459,19 @@ public class Main {
         boolean control = true;
 
         do{
-            char c = JOptionPane.showInputDialog(null, "I -- Information about Fibonacci Sequence\nG -- Go back\nEnter how many Fibonacci Numbers you wish to generate", "Fibonacci Sequence", JOptionPane.PLAIN_MESSAGE).charAt(0);
+            String c = JOptionPane.showInputDialog(null, "I -- Information about Fibonacci Sequence\nG -- Go back\nEnter how many Fibonacci Numbers you wish to generate", "Fibonacci Sequence", JOptionPane.PLAIN_MESSAGE);
             switch (c){
-                case 'I':
-                case 'i':
+                case "I":
+                case "i":
                     break;
-                case 'G':
-                case 'g':
+                case "G":
+                case "g":
                     control = false;
                     break;
                 default:
-                    if(Character.isDigit(c)){
-                        int n = Integer.parseInt(Character.toString(c));
+                        int n = Integer.parseInt(c);
                         String fiboStr = Fibonacci_Sequence_Operation.Fibonacci(n);
                         JOptionPane.showMessageDialog(null, fiboStr, "Fibonacci Sequence", JOptionPane.PLAIN_MESSAGE);
-                    }
-                    else{
-                        JOptionPane.showMessageDialog(null, "Invalid Format, Make sure is and integer -- Try again");
-                    }
                     break;
             }
         }while (control);
