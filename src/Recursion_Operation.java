@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 public class Recursion_Operation {
 
-    private static String hanoiStr = "Results:\n";
+    private static String hanoiStr = "Steps to solve your Tower of Hanoi\n";
     //private  static int [] gcdArr;
     public static long factorial(long num){
         //When it gets to the end then multiply by 1

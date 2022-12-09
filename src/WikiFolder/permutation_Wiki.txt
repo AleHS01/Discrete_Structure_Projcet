@@ -1,0 +1,13 @@
+Permutation Method:
+
+Receives a String of letters, numbers, combinations of both, words etc.
+
+Returns the different possible combinations that the user input has as well as the number of permutations.
+
+It also uses Recursion, with a basic algorithm of Time complexity of O(n) (Linear).
+
+Background Information:
+
+The term permutation refers to a mathematical calculation of the number of ways a particular set can be arranged.
+Put simply, a permutation is a word that describes the number of ways things can be ordered or arranged.
+With permutations, the order of the arrangement matters.

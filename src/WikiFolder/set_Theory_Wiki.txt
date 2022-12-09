@@ -1,3 +1,19 @@
+This Set Theory Method makes use of the basic set functions, which are:
+
+-Union
+-Intersection
+-Difference
+
+In Union, you can join a minimum of 2 sets and a maximum of 4 sets: A, B, C, D.
+Each set can be anything you want, numbers, letters, letters and numbers, words and more.
+
+In Intersection, you can intersect a minimum of 2 sets and a maximum of 4 sets: A, B, C, D.
+Each set can be of whatever you want, it has to have at least something in common in all the sets.
+
+It has an option to go back and return to the main menu.
+
+History:
+
 Set theory, as a separate mathematical discipline, begins in the work of Georg Cantor.
 One might say that set theory was born in late 1873, when he made the amazing discovery that the linear continuum,
 that is, the real line, is not countable, meaning that its points cannot be counted using the natural numbers.

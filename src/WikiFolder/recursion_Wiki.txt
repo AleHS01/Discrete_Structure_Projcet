@@ -1,0 +1,19 @@
+Methods within Recursion:
+
+Create it with the objective of using the recursion methods shown in class,
+and also some extra methods that use the recursion technique:
+
+This Method Includes:
+
+-Steps to Solve your Tower of Hanoi with the amount of disk you want
+-Factorial Calculator: can take digit from 0 to 65
+-Find GCD
+-Find LCM
+
+Each method uses recursion, accepts values from the user, and elaborates on the input, to deliver the final output.
+
+BackGround Information:
+
+Recursion is a widely used phenomenon in computer science used to solve complex problems by breaking them down into simpler ones.
+Recursion is a process by which a function calls itself directly or indirectly.
+The corresponding function is called as recursive function.

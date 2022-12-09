@@ -1,4 +1,3 @@
-import java.util.Scanner;
 import java.io.*;
 import javax.swing.JOptionPane;
 
@@ -63,11 +62,11 @@ public class Main {
                 "\t\t  List of Topics\n" +
                 "------------------------------------\n" +
                 "\tS -- Set Theory\n" +
-                "\tC -- Combination\n" +
-                "\tP -- Permutation\n" +
                 "\tT -- Pascal Triangle\n" +
                 "\tR -- Recursion\n" +
                 "\tF -- Fibonacci Sequence\n" +
+                "\tC -- Combination\n" +
+                "\tP -- Permutation\n" +
                 "\tQ -- Quit\n\n" +
                 "Enter your Selection: ";
         choice = JOptionPane.showInputDialog(null, jString, "Menu", JOptionPane.PLAIN_MESSAGE).charAt(0);
@@ -76,17 +75,17 @@ public class Main {
 
     }
 
-    public static void pause(Scanner scan, char choice) {
-        if (choice != 'q' && choice != 'Q') {
-            System.out.println();
-            System.out.println("Press \"Enter\" to continue");
-            String tempWait = scan.nextLine();
-            tempWait = scan.nextLine();
-        } else {
-            System.out.println("Quitting Program");
-        }
-
-    }
+//    public static void pause(Scanner scan, char choice) {
+//        if (choice != 'q' && choice != 'Q') {
+//            System.out.println();
+//            System.out.println("Press \"Enter\" to continue");
+//            String tempWait = scan.nextLine();
+//            tempWait = scan.nextLine();
+//        } else {
+//            System.out.println("Quitting Program");
+//        }
+//
+//    }
 
     public static void setTheory(int wikiIndex) throws IOException {
         String menu;
@@ -280,17 +279,17 @@ public class Main {
 
     }
 
-    public static void logic(int wikiIndex) throws IOException{
-        System.out.println("Logic is printing");
-        Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
-        System.out.println(wiki.getWikiString());
-    }
-
-    public static void counting(int wikiIndex) throws IOException{
-        System.out.println("Counting is printing");
-        Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
-        System.out.println(wiki.getWikiString());
-    }
+//    public static void logic(int wikiIndex) throws IOException{
+//        System.out.println("Logic is printing");
+//        Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
+//        System.out.println(wiki.getWikiString());
+//    }
+//
+//    public static void counting(int wikiIndex) throws IOException{
+//        System.out.println("Counting is printing");
+//        Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
+//        System.out.println(wiki.getWikiString());
+//    }
 
     public static void combination(int wikiIndex) throws IOException{
         Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
@@ -306,6 +305,7 @@ public class Main {
                 case 'i':
                 case 'I':
                     JOptionPane.showMessageDialog(null, wiki.getWikiString(), "Combination Information", JOptionPane.PLAIN_MESSAGE);
+                    control = false;
                     break;
                 case 'g':
                 case 'G':
@@ -361,8 +361,34 @@ public class Main {
 
 
     public static void permutation(int wikiIndex) throws IOException{
-        System.out.println("Permutation is printing");
         Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
+
+        boolean control = true;
+
+        do{
+            char c = JOptionPane.showInputDialog(null, "I -- Information about Pascal Triangle\nP -- Permutation Calculator\nG --  Go back\n").charAt(0);
+            switch (c){
+                case 'G':
+                case 'g':
+                    control = false;
+                    break;
+                case 'i':
+                case 'I':
+                    JOptionPane.showMessageDialog(null, wiki.getWikiString(), "Permutation", JOptionPane.PLAIN_MESSAGE);
+                    break;
+                case 'P':
+                case 'p':
+                    String str = JOptionPane.showInputDialog(null, "Enter What you want to get the permutation of");
+                    String temp = Permutation_Operation.permutationString(str, "");
+                    JOptionPane.showMessageDialog(null, "Permutations: " + Permutation_Operation.getPerNum() + "\n\n" +temp );
+                    Permutation_Operation.clear();
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null, "Error: '" + c + "' is an invalid selection - Try Again Please\n",
+                            "Menu", JOptionPane.WARNING_MESSAGE);
+                    break;
+            }
+        } while(control);
     }
 
     public static void pascalTriangle(int wikiIndex) throws IOException{
@@ -396,10 +422,10 @@ public class Main {
         } while(control);
     }
 
-    public static void induction(int wikiIndex) throws IOException{
-        System.out.println("induction");
-        Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
-    }
+//    public static void induction(int wikiIndex) throws IOException{
+//        System.out.println("induction");
+//        Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
+//    }
 
     public static void recursion(int wikiIndex) throws IOException{
         Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
@@ -410,7 +436,7 @@ public class Main {
         String temp = "Tower #2";
 
 
-        menu = "What do you wish to Perform?\n\tI -- Information about Recursion\n\tF -- Fibonacci Sequence\n\tX -- Factorial" +
+        menu = "What do you wish to Perform?\n\tI -- Information about Recursion\n\tX -- Factorial" +
                 "\n\tT -- Tower Of Hanoi\n\tC -- Greatest Common Divisor\n\tL -- Least Common Multiple\n\tG -- Go Back";
 
         char menuOption;
@@ -489,14 +515,14 @@ public class Main {
             }
         }while (control);
     }
-    public static void numberTheory(int wikiIndex) throws IOException{
-        System.out.println("Number Theory");
-        Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
-    }
-    public static void numberSystem(int wikiIndex) throws IOException{
-        System.out.println("Number System");
-        Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
-
-    }
+//    public static void numberTheory(int wikiIndex) throws IOException{
+//        System.out.println("Number Theory");
+//        Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
+//    }
+//    public static void numberSystem(int wikiIndex) throws IOException{
+//        System.out.println("Number System");
+//        Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
+//
+//    }
 }
 

@@ -1,0 +1,18 @@
+The Pascal Triangle Method:
+
+Asks the user to enter how many lines of the pascal triangle they want to generate.
+
+The program prints an approximation of how we would normally see the pascal triangle in an image.
+
+Background Information:
+
+One of the best-known integer patterns in the history of mathematics.
+Each entry in the triangle is the sum of the two numbers above it.
+Pascal's triangle is named after the French mathematician and philosopher Blaise Pascal (1623-1662),
+Who was the first to write an organized work about the properties and applications of the triangle in his treatise,
+Traité du triangle arithmétique (Treatise on Arithmetical Triangle) in 1653.
+
+Despite the fact that the triangle is named Pascal's triangle, the pattern was known long before Pascal wrote his treatise.
+The first explicit description of Pascal's triangle was by Halayudha, an Indian commentator in his 10th century commentary on Chandah Shastra, an ancient Indian book.
+Not long after that, Omar Khayyam (around A.D. 1100), a Persian poet and mathematician, and Yang Hui (1238–1298) , a Chinese mathematician, both discussed this arithmetic triangle.
+Therefore, Pascal's triangle is also called Khayyam-Pascal triangle in Iran and Yang Hui's triangle in China.
