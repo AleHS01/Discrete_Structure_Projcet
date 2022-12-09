@@ -22,18 +22,8 @@ public class Main {
                     wikiIndex = 1;
                     setTheory(wikiIndex);
                     break;
-                case 'L':
-                case 'l':
-                    wikiIndex = 2;
-                    logic(wikiIndex);
-                    break;
                 case 'C':
                 case 'c':
-                    wikiIndex = 3;
-                    counting(wikiIndex);
-                    break;
-                case 'B':
-                case 'b':
                     wikiIndex = 4;
                     combination(wikiIndex);
                     break;
@@ -47,11 +37,6 @@ public class Main {
                     wikiIndex = 6;
                     pascalTriangle(wikiIndex);
                     break;
-                case 'I':
-                case 'i':
-                    wikiIndex = 7;
-                    induction(wikiIndex);
-                    break;
                 case 'R':
                 case 'r':
                     wikiIndex = 8;
@@ -61,16 +46,6 @@ public class Main {
                 case 'f':
                     wikiIndex = 9;
                     fibonacciSequence(wikiIndex);
-                    break;
-                case 'N':
-                case 'n':
-                    wikiIndex = 10;
-                    numberTheory(wikiIndex);
-                    break;
-                case 'M':
-                case 'm':
-                    wikiIndex = 11;
-                    numberSystem(wikiIndex);
                     break;
                 default:
                     wikiIndex = 0;
@@ -88,42 +63,17 @@ public class Main {
                 "\t\t  List of Topics\n" +
                 "------------------------------------\n" +
                 "\tS -- Set Theory\n" +
-                "\tL -- Logic\n" +
-                "\tC -- Counting\n" +
-                "\tB -- Combination\n" +
+                "\tC -- Combination\n" +
                 "\tP -- Permutation\n" +
                 "\tT -- Pascal Triangle\n" +
-                "\tI -- Induction\n" +
                 "\tR -- Recursion\n" +
                 "\tF -- Fibonacci Sequence\n" +
-                "\tN -- Number Theory\n" +
-                "\tM -- Number System\n" +
                 "\tQ -- Quit\n\n" +
                 "Enter your Selection: ";
         choice = JOptionPane.showInputDialog(null, jString, "Menu", JOptionPane.PLAIN_MESSAGE).charAt(0);
 
         return choice;
-        /*
-        System.out.println();
-        System.out.println("------------------------------------");
-        System.out.println("\t\t  List of Topics");
-        System.out.println("------------------------------------");
-        System.out.println("\tS -- Set Theory");
-        System.out.println("\tL -- Logic");
-        System.out.println("\tC -- Counting");
-        System.out.println("\tB -- Combination");
-        System.out.println("\tP -- Permutation");
-        System.out.println("\tT -- Pascal Triangle");
-        System.out.println("\tI -- Induction");
-        System.out.println("\tR -- Recursion");
-        System.out.println("\tF -- Fibonacci Sequence");
-        System.out.println("\tN -- Number Theory");
-        System.out.println("\tM -- Number System");
-        System.out.println("\tQ -- Quit");
-        System.out.println();
-        System.out.print("Enter your Selection: ");
-        System.out.println();
-        */
+
     }
 
     public static void pause(Scanner scan, char choice) {
@@ -343,9 +293,72 @@ public class Main {
     }
 
     public static void combination(int wikiIndex) throws IOException{
-        System.out.println("Combination is printing");
         Wiki_Discrete wiki = new Wiki_Discrete(wikiIndex);
+
+        String menu = "I -- Information about Combinatorics\nG -- Go Back\n     Or\n Enter Witch Problem You want\n" +
+                        "    1 -- Problem #1: Schools Teams in A Basketball Tournament";
+
+        char c = JOptionPane.showInputDialog(null, menu, "Combinatorics Problems", JOptionPane.PLAIN_MESSAGE).charAt(0);
+        boolean control = true;
+
+        do {
+            switch (c) {
+                case 'i':
+                case 'I':
+                    JOptionPane.showMessageDialog(null, wiki.getWikiString(), "Combination Information", JOptionPane.PLAIN_MESSAGE);
+                    break;
+                case 'g':
+                case 'G':
+                    control = false;
+                    break;
+                default:
+                    boolean secondControl = true;
+
+                    int temp = Combination_Practice.Combination_Problem();
+                    String tStr = JOptionPane.showInputDialog(null, Combination_Practice.getProblem() + "Enter Solution as an Integer:\n  Or\nG -- Go Back", "Problem", JOptionPane.PLAIN_MESSAGE);
+
+                    //boolean thirdControl = true;
+                    switch (tStr) {
+                        case "G":
+                        case "g":
+                            control = false;
+                            //secondControl = false;
+                            break;
+                        default:
+                            do {
+                                int i = Integer.parseInt(tStr);
+                                if (i == Combination_Practice.getAns()) {
+                                    JOptionPane.showMessageDialog(null, "Your Answer was Correct, Explanation:\n The number of games is exactly the number of different pairs of teams.\n\n" +
+                                            "Answer:\n" + temp + " * " + (temp - 1) + "/2  = " + Combination_Practice.getAns(), "Juanito", JOptionPane.PLAIN_MESSAGE);
+                                    control = false;
+                                } else {
+                                    int count = 3;
+                                    for (int j = 0; j < 4; j++) {
+
+                                        if(count == 0){
+                                            JOptionPane.showMessageDialog(null, "The Correct Answer should be: "+ Combination_Practice.getAns() +"\nExplanation:\n The number of games is exactly the number of different pairs of teams.\n\n" +
+                                                    "Answer:\n" + temp + " * " + (temp - 1) + "/2  = " + Combination_Practice.getAns(), "Solution", JOptionPane.ERROR_MESSAGE);
+                                            break;
+                                        }
+                                        i = Integer.parseInt(JOptionPane.showInputDialog(null, "Umm... That was not the correct Answer\n You have " + count + " more Tries.\nEnter Solution as an Integer:", "Problem", JOptionPane.WARNING_MESSAGE));
+                                        if (i == Combination_Practice.getAns()) {
+                                            JOptionPane.showMessageDialog(null, "Your Answer was Correct, Explanation:\n The number of games is exactly the number of different pairs of teams.\n\n" +
+                                                    "Answer:\n" + temp + " * " + (temp - 1) + "/2  = " + Combination_Practice.getAns(), "Solution", JOptionPane.PLAIN_MESSAGE);
+                                            control = false;
+                                            break;
+                                        }
+
+                                        count--;
+                                    }
+                                }
+                                    break;
+
+                    } while (secondControl);
+                }
+            }
+        }while (control);
     }
+
 
     public static void permutation(int wikiIndex) throws IOException{
         System.out.println("Permutation is printing");
