@@ -1,13 +1,14 @@
 
 # Discrete Structure Project
 
-Estre Projecto fue realizado para la clase de Discrete Structure, cabe destacar que este projecto era totalmente opcional.
+This project was done for the Discrete Structure class, it should be noted that this project was totally optional, technically without any instructions.
 
-- El projecto es una tipo de calculadora que contiene muchos de los temas que se han tocado en clase
-- El codigo que esta en este repositorio es totlamente mio y no tiene instrucciones, con esto me refiero a que no habia ninga instruccion para este projecto solo que debiamos de demostrar nuestro conocimiento sobre la clase
-- El codigo es bien largo debido a que usa mucho la clase *JOptionPane*
+- The project is a type of calculator that contains many of the topics that have been covered in class.
+- The code that is in this repository is entirely mine and has no instructions, by this I mean that there were no instructions for this project only that we had to demonstrate our knowledge about the class.
+- The code is quite long because it uses a lot of the *JOptionPane* class.
 - Every Selction of the menu contains 3 main choices, I - information about the topic, O - Operations, G - Go back to previous screen or Menu selection
 
+## Demostration video: [Google Drive Link](https://drive.google.com/file/d/1eYDpQos8fQg8KpCSB9nHhCfGl_vj0z0q/view?usp=share_link).
 
 ## Documentation
 
